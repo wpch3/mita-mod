@@ -3,6 +3,9 @@ bin/
 obj/
 build/
 
+# --- 侦察报告输出（体积大、来自游戏元数据，不入库，直接发给协作者即可） ---
+recon/
+
 # --- 游戏 interop 程序集：游戏资产派生物，不入库（公开仓库合规要求），请按 lib/interop/README.md 本机生成 ---
 lib/interop/*
 !lib/interop/README.md

@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <AssemblyName>MitaTe.ReconDump</AssemblyName>
+    <RootNamespace>MitaTe.ReconDump</RootNamespace>
+    <Version>0.1.0</Version>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Description>MitaTE 侦察：interop 程序集静态扫描器（只读，不执行游戏代码）</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- 只读解析 .NET 程序集元数据用；与游戏互不干扰 -->
+    <PackageReference Include="System.Reflection.MetadataLoadContext" Version="8.*" />
+  </ItemGroup>
+
+</Project>

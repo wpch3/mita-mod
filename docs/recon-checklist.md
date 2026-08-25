@@ -9,7 +9,7 @@
 - [x] BepInEx 6（IL2CPP / CoreCLR bleeding edge）装进游戏根目录，运行一次，生成 `BepInEx/interop/`（2026-08-25 完成，be.785，确认 Unity 2021.3.35f1 + .NET 6）
 - [x] interop DLL 拷到 `lib/interop/`，`dotnet build` 通过，插件日志出现 `[MitaTE]`（v0.1.0 验证）
 - [ ] UnityExplorer（发布页选 **BepInEx IL2CPP CoreCLR** 版：`UnityExplorer.BepInEx.IL2CPP.CoreCLR.zip`）dll 放进 `BepInEx/plugins/`，进游戏按 **F7** 打开
-- [ ] dnSpy 打开 interop 的 `Assembly-CSharp.dll`（只看签名，试试搜：`Dialogue` / `Save` / `Scene` / `End` / `Cutscene` / `Kill` / `Restart`）；Il2CppDumper 生成 `dump.cs` / Ghidra 工程
+- [ ] （可选）dnSpy 打开 interop 的 `Assembly-CSharp.dll` —— 常规搜索已被 0-1.6 的 ReconDump 替代，dnSpy 只留作深挖单个类时用；Il2CppDumper + Ghidra 推后到需要看方法逻辑时再用
 - [x] hello patch/部署链路验证（由 v0.2.0 内置 Recon 组件接管，见 0-1.5）
 
 ## 0-1.5 内置侦察：边玩边自动收集（v0.2.0 起插件自带 `ReconBehaviour`）
@@ -27,6 +27,24 @@
 1. 关掉游戏 → Git 拉取最新代码 → 重跑 `tools/Build-And-Deploy.ps1 -MiSideDir "<游戏目录>"` → 重开游戏；
 2. 读取**最接近后期的存档**（或新档速通），把 §0-3 对照表涉及的章节各走一遍；
 3. 结束后把 `MitaTE-recon.log` 整个发给 Agent —— 它就是填下方场景清单和拦截点的一手数据。
+
+## 0-1.6 静态扫描：一条命令代替 dnSpy 手工搜索（ReconDump）
+
+```powershell
+./tools/Recon-Scan.ps1
+```
+
+用 MetadataLoadContext **只读**解析 `lib/interop/Assembly-CSharp.dll`（不执行任何游戏代码），
+在 `recon/` 目录生成：
+
+- `assembly-csharp.all-types.txt` —— 游戏全部类型清单（逐行全名，可随便 grep）
+- `assembly-csharp.keyword-report.txt` —— 按关键词分组命中的类型 + 方法签名 + 字段，
+  覆盖：存档 / 对话 / 过场 / 结局 / 死亡重置 / 场景章节 / 角色 / 核心终端 / 交互物品 / 管理器
+
+把这两个文件（至少 keyword-report）发给 Agent，即可开始填 §0-3 对照表。
+`recon/` 已加入 .gitignore，不会被误提交。
+
+> 以后想看某个方法的具体逻辑时，再开 dnSpy（只能看签名）或上 Il2CppDumper + Ghidra。
 
 ## 0-2 侦察对象清单
 

@@ -127,7 +127,7 @@ public static bool Prefix(/* CutsceneController */ object __instance)
    - 差异化定位：我们走"**玩家主动修复 + 全员和解**"路线，与官方以疯狂米塔为中心的和平模式不同；
    - 大更新后游戏类结构必然变化，mod 需要跟进适配 —— 阶段 0 的对照表就是为快速重构准备的。
 2. **工作量预期**：IL2CPP 逆向 + 剧情演出拼装属于"总转换"级 mod，按**月**预算，单人开发建议先保住阶段 1 的可玩 demo。
-3. **版权合规**：不内置任何游戏资源；用户需自备正版游戏并自行生成 interop 程序集（见 `lib/interop/README.md`）。
+3. **版权合规**：仓库现包含游戏 interop 派生物（团队决定入库以便协作），因此**仓库必须保持私有、不得公开分发**；对外发布 mod 时只发布 `MitaTrueEnding.dll`，不附带任何游戏资源。
 
 ## 七、构建与安装（本仓库）
 
@@ -142,8 +142,8 @@ public static bool Prefix(/* CutsceneController */ object __instance)
 2. MiSide 游戏本体；已安装 BepInEx 6（IL2CPP bleeding edge）并运行过一次游戏（首次运行会生成 interop）。
 
 ```powershell
-# 1. 把 interop 拷进本机仓库目录（这是你本机的操作，无需上传到 GitHub）：
-#    复制 <游戏目录>/BepInEx/interop/*.dll  →  <本仓库>/lib/interop/
+# 1.（若 clone / ZIP 里已带 lib/interop/*.dll —— 本项目已入库 —— 直接跳到第 2 步）
+#    否则复制 <游戏目录>/BepInEx/interop/*.dll  →  <本仓库>/lib/interop/
 #    （详细步骤见 lib/interop/README.md）
 
 # 2. 在仓库根目录直接编译（根目录自带 MitaMod.sln，不要先 cd 到别处）：
@@ -176,7 +176,7 @@ dotnet build -c Release
 │   ├── Plugin.cs                    # 插件入口
 │   ├── RescueState.cs               # 拯救进度（独立 JSON 存档）
 │   └── Templates/                   # 补丁/演出模板（.txt，不参与编译，等阶段 0 落实）
-├── lib/interop/                     # 游戏 interop 程序集（本机生成，体积大且含游戏资产，不建议入库）
+├── lib/interop/                     # 游戏 interop 程序集（已按约定入库；仓库必须保持私有）
 └── tools/Build-And-Deploy.ps1       # 一键编译 + 部署到游戏 BepInEx/plugins（Windows）
 ```
 

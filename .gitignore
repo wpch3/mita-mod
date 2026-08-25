@@ -3,9 +3,12 @@ bin/
 obj/
 build/
 
-# --- 游戏 interop 程序集：版权与体积原因不入库，请按 lib/interop/README.md 自行生成 ---
+# --- 游戏 interop 程序集：按项目决定直接入库（仓库须保持私有）。游戏大更新后需同步替换 ---
+# 若想改为不入库：恢复下面这行排除并执行 git rm -r --cached lib/interop
 # lib/interop/*
-!lib/interop/README.md
+# BepInEx 本地缓存（与编译无关）永远不入库
+lib/interop/*.db
+lib/interop/assembly-hash.txt
 
 # --- IDE / 系统 ---
 .idea/

@@ -4,7 +4,7 @@ obj/
 build/
 
 # --- 游戏 interop 程序集：版权与体积原因不入库，请按 lib/interop/README.md 自行生成 ---
-lib/interop/*
+# lib/interop/*
 !lib/interop/README.md
 
 # --- IDE / 系统 ---

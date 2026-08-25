@@ -17,10 +17,10 @@ public class Plugin : BasePlugin
 {
     public const string GUID = "com.wpch3.miside.trueending";
     public const string NAME = "MiSide True Ending - Save All Mitas";
-    public const string VERSION = "0.2.0";
+    public const string VERSION = "0.2.1";
 
     /// <summary>全局日志（输出到 BepInEx/LogOutput.log）。</summary>
-    internal static ManualLogSource Log { get; private set; } = null!;
+    internal static new ManualLogSource Log { get; private set; } = null!;
 
     /// <summary>拯救进度：独立于游戏存档的自定义 JSON（见 RescueState）。</summary>
     public static RescueState Rescue { get; private set; } = null!;

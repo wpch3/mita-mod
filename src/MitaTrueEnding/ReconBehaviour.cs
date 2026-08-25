@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using BepInEx;
+using Il2CppInterop.Runtime;
 using Il2CppInterop.Runtime.Injection;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -30,8 +31,10 @@ public class ReconBehaviour : MonoBehaviour
     public void Awake()
     {
         LogLine("=== Recon 组件启动：场景切换记录已开启；游戏内按 F9 打印当前场景根对象 ===");
-        SceneLoadedHandler handler = OnSceneLoaded;
-        SceneManager.sceneLoaded += handler;
+        // IL2CPP 注意：interop stub 里的 UnityAction<,> 被生成为"类"而非原生委托，
+        // 方法组无法直接 +=；正确姿势：先转托管 Action，再 DelegateSupport.ConvertDelegate 包装
+        SceneManager.sceneLoaded += DelegateSupport.ConvertDelegate<SceneLoadedHandler>(
+            (Action<Scene, LoadSceneMode>)OnSceneLoaded);
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)

@@ -9,7 +9,7 @@ MiSide 是 **IL2CPP** 游戏。编译本 mod 所需的游戏/引擎程序集
 
 1. 下载 **BepInEx 6（IL2CPP / CoreCLR，bleeding edge 版）**：
    <https://builds.bepinex.dev/projects/bepinex_be> —— 选 `BepInEx-Unity.IL2CPP-win-x64-6.0.0-be.*.zip`
-2. 解压到 MiSide **游戏根目录**（`MiSide.exe` 所在处）。
+2. 解压到 MiSide **游戏根目录**（`MiSideFull.exe` 所在处）。
 3. 运行一次游戏到主菜单后退出（首次启动较慢，正在生成 interop）。
 4. 把 `<游戏根目录>/BepInEx/interop/` 下的**全部 dll**（约 87 个）复制到本目录，
    应能看到 `Assembly-CSharp.dll`、`UnityEngine.CoreModule.dll` 等。

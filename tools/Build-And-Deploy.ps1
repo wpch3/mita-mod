@@ -1,4 +1,4 @@
-﻿# ============================================================
+# ============================================================
 # MiSide「全员拯救」Mod —— 一键编译 + 部署脚本 (Windows PowerShell 5.1+)
 #
 # 用法示例：
@@ -40,7 +40,7 @@ if (-not (Test-Path (Join-Path $InteropDir "Assembly-CSharp.dll"))) {
 lib/interop/ 下没有 Assembly-CSharp.dll，且在「$MiSideDir\BepInEx\interop\」里也没找到可自动复制的 interop。
 请按顺序检查：
   1. BepInEx 6 (IL2CPP) 是否已解压到游戏根目录
-     （MiSide.exe 旁边应直接出现 BepInEx 文件夹、winhttp.dll、doorstop_config.ini，
+     （MiSideFull.exe 旁边应直接出现 BepInEx 文件夹、winhttp.dll、doorstop_config.ini，
        注意不要多套一层文件夹）
   2. 是否运行过一次游戏并到达主菜单（首次运行会生成 BepInEx\interop\，耗时较长）
      成功后应存在：<游戏目录>\BepInEx\interop\Assembly-CSharp.dll
@@ -62,8 +62,9 @@ if ([string]::IsNullOrWhiteSpace($MiSideDir)) {
     Write-Host "[3/3] 未指定 -MiSideDir，跳过部署。" -ForegroundColor Yellow
     Write-Host "      手动部署：复制 $DllPath 到 <游戏目录>\BepInEx\plugins\"
 } else {
-    if (-not (Test-Path (Join-Path $MiSideDir "MiSide.exe"))) {
-        throw "在 $MiSideDir 下没找到 MiSide.exe，请确认 -MiSideDir 指向游戏根目录。"
+    $hasExe = (Test-Path (Join-Path $MiSideDir "MiSideFull.exe")) -or (Test-Path (Join-Path $MiSideDir "MiSide.exe"))
+    if (-not $hasExe) {
+        throw "在 $MiSideDir 下没找到 MiSideFull.exe / MiSide.exe，请确认 -MiSideDir 指向游戏根目录。"
     }
     $Plugins = Join-Path $MiSideDir "BepInEx/plugins"
     New-Item -ItemType Directory -Force $Plugins | Out-Null

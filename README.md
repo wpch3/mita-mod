@@ -131,17 +131,36 @@ public static bool Prefix(/* CutsceneController */ object __instance)
 
 ## 七、构建与安装（本仓库）
 
-**前置**：.NET SDK ≥ 6.0；MiSide 游戏本体；已安装 BepInEx 6（IL2CPP bleeding edge）并运行过一次游戏。
+**前置**：
 
-```bash
-# 1. 生成 interop 后，把游戏 dll 拷进仓库（详见 lib/interop/README.md）
-#    <游戏目录>/BepInEx/interop/*.dll  →  lib/interop/
+1. **.NET SDK ≥ 6.0**（建议 .NET 8 LTS）。
+   - PowerShell 里运行 `dotnet --list-sdks` 检查；如果最高只到 3.x（报错信息里"生成引擎版本 16.3"就是 .NET Core SDK 3.0），**无法编译本项目**，请先安装新版：
+     ```powershell
+     winget install Microsoft.DotNet.SDK.8
+     ```
+     装完**关闭并重开 PowerShell**，用 `dotnet --version` 验证。
+2. MiSide 游戏本体；已安装 BepInEx 6（IL2CPP bleeding edge）并运行过一次游戏（首次运行会生成 interop）。
 
-# 2. 编译
-dotnet build -c Release src/MitaTrueEnding/MitaTrueEnding.csproj
+```powershell
+# 1. 把 interop 拷进本机仓库目录（这是你本机的操作，无需上传到 GitHub）：
+#    复制 <游戏目录>/BepInEx/interop/*.dll  →  <本仓库>/lib/interop/
+#    （详细步骤见 lib/interop/README.md）
 
-# 3. 部署：<编译输出>/MitaTrueEnding.dll  →  <游戏目录>/BepInEx/plugins/
+# 2. 在仓库根目录直接编译（根目录自带 MitaMod.sln，不要先 cd 到别处）：
+dotnet build -c Release
+
+# 3. 部署（二选一）：
+#    手动：复制 src/MitaTrueEnding/bin/Release/net6.0/MitaTrueEnding.dll → <游戏目录>/BepInEx/plugins/
+#    脚本：./tools/Build-And-Deploy.ps1 -MiSideDir "D:\SteamLibrary\steamapps\common\MiSide"
 ```
+
+常见报错速查：
+
+| 报错 | 原因 | 解决 |
+|---|---|---|
+| `error MSB1003: 请指定项目或解决方案文件` | 在不含 .sln/.csproj 的目录执行了 `dotnet build` | 确认当前目录是仓库根（应有 `MitaMod.sln`）；若 ZIP 是旧的 main 分支版（只有 README），请重新下载 arena 分支 |
+| `error NETSDK1045: 当前 .NET SDK 不支持将 .NET 6.0 设置为目标` | SDK 版本太旧（如 3.x） | 按上方前置第 1 条安装 .NET SDK 8 |
+| restore 找不到 `BepInEx.Unity.IL2CPP 6.0.0-be.*` | nuget.bepinex.dev 源未生效 | 确认 `NuGet.config` 在仓库根目录；或把 csproj 中版本改为 [builds.bepinex.dev](https://builds.bepinex.dev/projects/bepinex_be) 上的具体版本号 |
 
 运行后日志在 `<游戏目录>/BepInEx/LogOutput.log`，进度存档在 `<游戏目录>/BepInEx/config/MitaTrueEnding.rescue.json`。
 
@@ -149,13 +168,16 @@ dotnet build -c Release src/MitaTrueEnding/MitaTrueEnding.csproj
 
 ```
 ├── README.md                        # 本方案
+├── MitaMod.sln                      # 解决方案：仓库根目录可直接 dotnet build
+├── NuGet.config                     # 添加 nuget.bepinex.dev 源
 ├── docs/recon-checklist.md          # 阶段 0 逆向侦察清单（含待填对照表）
 ├── src/MitaTrueEnding/              # BepInEx 6 IL2CPP 插件工程
 │   ├── MitaTrueEnding.csproj
 │   ├── Plugin.cs                    # 插件入口
 │   ├── RescueState.cs               # 拯救进度（独立 JSON 存档）
 │   └── Templates/                   # 补丁/演出模板（.txt，不参与编译，等阶段 0 落实）
-└── lib/interop/                     # 游戏 interop 程序集（不入库，自行生成）
+├── lib/interop/                     # 游戏 interop 程序集（本机生成，体积大且含游戏资产，不建议入库）
+└── tools/Build-And-Deploy.ps1       # 一键编译 + 部署到游戏 BepInEx/plugins（Windows）
 ```
 
 ## 九、参考链接

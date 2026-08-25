@@ -6,11 +6,27 @@
 
 ## 0-1 环境搭建
 
-- [ ] BepInEx 6（IL2CPP / CoreCLR bleeding edge）装进游戏根目录，运行一次，生成 `BepInEx/interop/`
-- [ ] interop DLL 拷到 `lib/interop/`，`dotnet build` 通过
-- [ ] UnityExplorer（BepInEx IL2CPP CoreCLR 版）能进游戏按快捷键打开
-- [ ] dnSpy 打开 interop 的 `Assembly-CSharp.dll`（只看签名）；Il2CppDumper 生成 `dump.cs` / Ghidra 工程
-- [ ] 编译一个 hello patch：日志打印当前场景名（练手 + 验证部署链路）
+- [x] BepInEx 6（IL2CPP / CoreCLR bleeding edge）装进游戏根目录，运行一次，生成 `BepInEx/interop/`（2026-08-25 完成，be.785，确认 Unity 2021.3.35f1 + .NET 6）
+- [x] interop DLL 拷到 `lib/interop/`，`dotnet build` 通过，插件日志出现 `[MitaTE]`（v0.1.0 验证）
+- [ ] UnityExplorer（发布页选 **BepInEx IL2CPP CoreCLR** 版：`UnityExplorer.BepInEx.IL2CPP.CoreCLR.zip`）dll 放进 `BepInEx/plugins/`，进游戏按 **F7** 打开
+- [ ] dnSpy 打开 interop 的 `Assembly-CSharp.dll`（只看签名，试试搜：`Dialogue` / `Save` / `Scene` / `End` / `Cutscene` / `Kill` / `Restart`）；Il2CppDumper 生成 `dump.cs` / Ghidra 工程
+- [x] hello patch/部署链路验证（由 v0.2.0 内置 Recon 组件接管，见 0-1.5）
+
+## 0-1.5 内置侦察：边玩边自动收集（v0.2.0 起插件自带 `ReconBehaviour`）
+
+部署新版插件后正常玩游戏即可，无需任何额外操作：
+
+- **每次场景切换** → 追加写入 `<游戏目录>/BepInEx/config/MitaTE-recon.log`
+  （时间戳 + 场景名 + 场景路径 + 根对象数；也同步进主日志，前缀 `[MitaTE-Recon]`）
+- **游戏内按 F9** → 把当前场景的根对象清单（名字 + 开关状态）写进同一日志
+  → 走到关键位置（地下底层 / 核心区域 / 掌机旁 / 二楼房间 / 循环回廊 / 2D 世界）就按一下 F9，
+  留下"当时场景里有哪些关键物体"
+
+建议流程：
+
+1. 关掉游戏 → Git 拉取最新代码 → 重跑 `tools/Build-And-Deploy.ps1 -MiSideDir "<游戏目录>"` → 重开游戏；
+2. 读取**最接近后期的存档**（或新档速通），把 §0-3 对照表涉及的章节各走一遍；
+3. 结束后把 `MitaTE-recon.log` 整个发给 Agent —— 它就是填下方场景清单和拦截点的一手数据。
 
 ## 0-2 侦察对象清单
 

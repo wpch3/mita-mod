@@ -1,7 +1,9 @@
+using System;
 using BepInEx;
 using BepInEx.Logging;
 using BepInEx.Unity.IL2CPP;
 using HarmonyLib;
+using Il2CppInterop.Runtime.Injection;
 
 namespace MitaTrueEnding;
 
@@ -15,7 +17,7 @@ public class Plugin : BasePlugin
 {
     public const string GUID = "com.wpch3.miside.trueending";
     public const string NAME = "MiSide True Ending - Save All Mitas";
-    public const string VERSION = "0.1.0";
+    public const string VERSION = "0.2.0";
 
     /// <summary>全局日志（输出到 BepInEx/LogOutput.log）。</summary>
     internal static ManualLogSource Log { get; private set; } = null!;
@@ -45,6 +47,18 @@ public class Plugin : BasePlugin
         // _harmony.PatchAll(typeof(Patches.TinyMitaInterceptPatch));
         // _harmony.PatchAll(typeof(Patches.MilaInterceptPatch));
         // _harmony.PatchAll(typeof(Patches.CappieInterceptPatch));
+
+        // --- 阶段 0 内置侦察：场景切换记录 + F9 打印当前场景根对象 ---
+        try
+        {
+            ClassInjector.RegisterTypeInIl2Cpp<ReconBehaviour>();
+            AddComponent<ReconBehaviour>();
+            Log.LogInfo("[MitaTE] 侦察组件已启用：场景切换记录到 BepInEx/config/MitaTE-recon.log，游戏内按 F9 打印当前场景根对象");
+        }
+        catch (Exception e)
+        {
+            Log.LogWarning($"[MitaTE] 侦察组件启动失败（不影响主功能）: {e.Message}");
+        }
 
         Log.LogInfo("[MitaTE] 未启用任何剧情拦截补丁（等待阶段 0 侦察结果）");
     }

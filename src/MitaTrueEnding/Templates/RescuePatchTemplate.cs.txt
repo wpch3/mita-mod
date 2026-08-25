@@ -1,0 +1,50 @@
+// =============================================================================
+// 模板：剧情事件拦截补丁（Harmony Prefix）
+// -----------------------------------------------------------------------------
+// 此文件是【教学模板】，扩展名 .txt，不参与编译。
+// 使用方式：
+//   1. 完成 docs/recon-checklist.md，拿到真实类名/方法名；
+//   2. 复制本文件为 src/MitaTrueEnding/Patches/<Xxx>InterceptPatch.cs；
+//   3. 替换所有 TODO 占位符，然后在 Plugin.cs 里取消对应 PatchAll 注释。
+//
+// IL2CPP 关键差异（相对 v1 Gemini 方案）：
+//   - 游戏类型来自 lib/interop 生成的壳程序集，不是原生 .NET 类型；
+//   - 启动托管协程必须 .WrapToIl2Cpp()（见文件末尾）；
+//   - 补丁目标若被 IL2CPP 内联/裁剪导致 Harmony 打不上，备选：
+//     退一层去 patch 它的调用方，或 patch 场景加载/结局判定函数。
+// =============================================================================
+
+// using System.Collections;
+// using BepInEx.Unity.IL2CPP.Utils.Collections;   // WrapToIl2Cpp()
+// using HarmonyLib;
+// using UnityEngine;                               // 来自 interop 的 UnityEngine 包装
+// // TODO(逆向): using <游戏实际命名空间>;
+
+// namespace MitaTrueEnding.Patches;
+
+// TODO(逆向): 替换为真实类型与方法。候选目标按优先级（README §4.2）：
+//   1) 结局判定 / 场景切换函数（最稳）
+//   2) 剧情触发器 / Cutscene Controller
+//   3) Timeline / PlayableDirector 回调
+// 示例善良米塔终章拦截（类名纯属占位，阶段 0 填入 recon-checklist 的对照表）：
+
+// [HarmonyPatch(typeof(KindMitaCutsceneController), "PlayExecution")]
+// public static class KindMitaInterceptPatch
+// {
+//     public static bool Prefix(KindMitaCutsceneController __instance)
+//     {
+//         if (!Plugin.Rescue.TrueEndingUnlocked)
+//             return true;                     // 伏笔未齐：放行原版剧情，零痕迹
+//
+//         Plugin.Log.LogInfo("[MitaTE] 拦截善良米塔遇害事件，启动拯救流程");
+//         Plugin.Rescue.MarkRescued("kind");
+//
+//         // 阻止原版演出 -> 跑自制拯救/和解流程
+//         // IL2CPP 注意：托管 IEnumerator 必须 WrapToIl2Cpp 后再交给 IL2CPP 的 StartCoroutine
+//         __instance.StartCoroutine(TrueEndingRoutine.Run(__instance).WrapToIl2Cpp());
+//         return false;                      // 跳过原版 PlayExecution
+//     }
+// }
+
+// 其他三个拦截点（循环回廊小米塔 / 2D 世界米拉 / 卡比）按同一模式各建一个文件，
+// 只拦各自章节的事件、各写各自的 flag —— 不要做成一个大补丁。

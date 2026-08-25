@@ -1,0 +1,48 @@
+// =============================================================================
+// 模板：真·和平结局演出协程（面向阶段 2/3）
+// -----------------------------------------------------------------------------
+// 此文件是【教学模板】，扩展名 .txt，不参与编译。
+// 复制为 src/MitaTrueEnding/Cutscenes/TrueEndingRoutine.cs 后替换占位符。
+// 内容：和解对话 -> 稳定底层空间 -> 加载终局场景 -> 生成共存米塔。
+// =============================================================================
+
+// using System.Collections;
+// using UnityEngine;
+// using UnityEngine.SceneManagement;
+// // TODO(逆向): using <游戏实际命名空间>;
+
+// namespace MitaTrueEnding.Cutscenes;
+
+// public static class TrueEndingRoutine
+// {
+//     public static IEnumerator Run(Component context)
+//     {
+//         // 1. 镜头与角色接管（TODO(逆向): 找到相机控制器/角色 Animator）
+//         //    var kindMitaAnimator = ...;  kindMitaAnimator.Play("<真实状态名>"); // 状态名先核对
+//
+//         // 2. 和解对话：喂入自制台词 ID（TODO: 本地化表注入，见 README §4.3）
+//         //    配音决策：静音字幕 or AI 配音
+//         //    DialogueManagerShim.Show("mitate.trueending.001");
+//         //    等待台词播完……
+//         yield return new WaitForSeconds(4f);
+//
+//         // 3. “运行修复代码、稳定底层空间”的演出（特效/屏幕故障修复/UI 表现）
+//         yield return new WaitForSeconds(2f);
+//
+//         // 4. 跳转真·和平结局场景（TODO(逆向): 场景名从 UnityExplorer 场景清单核对；
+//         //    优先复刻官方和平模式场景布局）
+//         //    SceneManager.LoadScene("<终局场景名>");
+//
+//         // 5. 场景加载完成后（SceneManager.sceneLoaded 回调）：
+//         //    - GameObject.Instantiate 善良米塔 / 小米塔 prefab，摆好坐标与 Idle；
+//         //    - 挂碰撞体 + 交互脚本（日常对话触发）；
+//         //    - 米拉走掌机/电视 RenderTexture，不生成 3D 实体；
+//         //    - 检查 NavMesh，防止穿模卡墙。
+//     }
+// }
+
+// 贴士：
+// - WaitForSeconds 用 UnityEngine 的（interop 包装），不要用自己的计时 loop；
+// - 需要常驻驱动（监听场景加载、按键）时，注册托管 MonoBehaviour：
+//   ClassInjector.RegisterTypeInIl2Cpp<MyBehaviour>() 后在启动场景 AddComponent，
+//   详见 BepInEx 6 IL2CPP 文档。

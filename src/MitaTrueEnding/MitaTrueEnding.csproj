@@ -1,0 +1,39 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <AssemblyName>MitaTrueEnding</AssemblyName>
+    <RootNamespace>MitaTrueEnding</RootNamespace>
+    <Version>0.1.0</Version>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Description>MiSide 「全员拯救」真结局 Mod（BepInEx 6 / IL2CPP）</Description>
+  </PropertyGroup>
+
+  <!-- 可选：环境变量 MISIDE_DIR 指向游戏根目录时，直接引用游戏里的 interop -->
+  <PropertyGroup>
+    <MiSideDir Condition="'$(MiSideDir)' == '' AND '$(MISIDE_DIR)' != ''">$(MISIDE_DIR)</MiSideDir>
+    <LocalInteropDir>$(MSBuildProjectDirectory)\..\..\lib\interop</LocalInteropDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- BepInEx 6 IL2CPP：来自 nuget.bepinex.dev（见仓库根目录 NuGet.config） -->
+    <PackageReference Include="BepInEx.Unity.IL2CPP" Version="6.0.0-be.*" />
+    <!-- HarmonyX：仅编译期引用；运行时由 BepInEx 自带的 0Harmony.dll 提供，不要把输出的 0Harmony.dll 拷进 plugins -->
+    <PackageReference Include="HarmonyX" Version="2.*" PrivateAssets="all" />
+  </ItemGroup>
+
+  <!-- 游戏 interop 程序集：复制 lib/interop/*.dll 后自动引用（生成方式见 lib/interop/README.md） -->
+  <ItemGroup Condition="Exists('$(LocalInteropDir)\Assembly-CSharp.dll')">
+    <Reference Include="$(LocalInteropDir)\*.dll">
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup Condition="'$(MiSideDir)' != '' AND Exists('$(MiSideDir)\BepInEx\interop\Assembly-CSharp.dll')">
+    <Reference Include="$(MiSideDir)\BepInEx\interop\*.dll">
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+</Project>

@@ -153,21 +153,21 @@ static string Params(MethodBase m)
     catch { return "<?>"; }
 }
 
-static BindingFlags AllDecl =>
+static BindingFlags AllDeclFlags() =>
     BindingFlags.DeclaredOnly | BindingFlags.Instance | BindingFlags.Static |
     BindingFlags.Public | BindingFlags.NonPublic;
 
 static IEnumerable<MethodInfo> SafeMethods(Type t)
 {
-    try { return t.GetMethods(AllDecl); } catch { return Enumerable.Empty<MethodInfo>(); }
+    try { return t.GetMethods(AllDeclFlags()); } catch { return Enumerable.Empty<MethodInfo>(); }
 }
 
 static IEnumerable<FieldInfo> SafeFields(Type t)
 {
-    try { return t.GetFields(AllDecl); } catch { return Enumerable.Empty<FieldInfo>(); }
+    try { return t.GetFields(AllDeclFlags()); } catch { return Enumerable.Empty<FieldInfo>(); }
 }
 
 static IEnumerable<PropertyInfo> SafeProps(Type t)
 {
-    try { return t.GetProperties(AllDecl); } catch { return Enumerable.Empty<PropertyInfo>(); }
+    try { return t.GetProperties(AllDeclFlags()); } catch { return Enumerable.Empty<PropertyInfo>(); }
 }

@@ -35,6 +35,20 @@
   追加进 `MitaTE-recon.log` —— 这是锁定「处决过场资源名」（§0-3 表格第 2 列）的直接数据来源。
   纯侦察不拦截；通关后跟着日志一起交给 Agent 即可。
 
+**已实证的场景对照（动态侦察首批成果，2026-08-26）：**
+
+| LocationN | 场景名 | 内容实证 |
+|---|---|---|
+| 1 | `Scene 1 - RealRoom` | 现实房间序章：第 1/2/5/10/20/33/37 天（CutScene 物体名 `ДЕНЬ n`=俄语"第n天"），第 37 天被拉入游戏 ✅（与百科设定吻合） |
+| 2 | `Scene 2 - InGame` | 进入游戏世界 |
+| 3 | `Scene 3 - WeTogether` | 与米塔相处（含看电视过场 asset=`Television` / go=`Channel 3`） |
+| 4 | `Scene 4 - StartSecret` | 疑云开始（场景内有 `InterfaceSave(Clone)`） |
+| 5 | `Scene 5 - StartHorror` | 恐怖开始（过场 asset=`LegsRun`） |
+| 6 | `Scene 6 - BasementFirst` | 地下室：善良米塔戒指引导的电锯追杀章（GodMode 拦截日志实证 `Location6_MitaKiller` 在此活动）✅ |
+
+> 结论：`LocationN` 编号与 `Scene N - 代号` **一一对应**（至少前 6 章），后续章节照此映射期望 1:1，通关日志收尾时全量确认。
+> 雷达已实证工作：开场 `LogoPresent`、序章日切 `Scene 1 StartGame`/`Scene 2 Day 2`、电视 `Television`、恐怖开端 `LegsRun` 等资源名全部捕获。
+
 场景名格式已确认：`Scene <章节号> - <代号>`（例：`Scene 3 - WeTogether`）——
 通关一遍即可拿全"章节号 ↔ 场景名"对照。
 

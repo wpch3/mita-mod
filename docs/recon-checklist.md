@@ -41,7 +41,12 @@
 建议流程：
 
 1. 关掉游戏 → Git 拉取最新代码 → 重跑 `tools/Build-And-Deploy.ps1 -MiSideDir "<游戏目录>"` → 重开游戏；
-2. 从头通关一遍即可（**不用管 F9**），插件自动记录一切；
+2. 从头通关（**不用管 F9**），插件自动记录一切。结局采集优先级（2026-08-26 定）：
+   - **必须·卡带结局**：走标准主线到底（衣柜事件选"继续查真相/离开"）—— 全章节场景 + 处决过场资源名全靠它；
+   - **推荐·自杀结局**（顺手）：任一含保险箱的章节输 **4970** 拔卡带即可，约 10 分钟，
+     **不需要完整二周目**；它提供"原版结局演出 → 回标题"的完整收口流程，我们的双结局收口就仿它；
+   - **暂缓·留下结局**：它在衣柜事件**提前终结游戏**且要 6 个条件（含"已通关一次"），与主线采集冲突；
+     等以后做和平模式菜单联动时再单开一局（条件已知，约 15-20 分钟），现在不用打。
 3. 通关后把 `MitaTE-recon.log` 和 `MitaTE-scene-snapshots.log` 一起发给 Agent。
 
 ## 0-1.6 静态扫描：一条命令代替 dnSpy 手工搜索（ReconDump）
@@ -85,6 +90,15 @@
 | 终章·核心区域 | 善良米塔被杀 | `Location15` + `Location15_MitaKind_Follow`（GoSit/FollowStop）+ `Location15_ScreenID`（编号输入）+ `Core_Entry`（核心门 OnTriggerEnter/DoorClick）；死亡推定为 `Playable_Animation.Play/PlayAsset` 过场 | **首选层：Prefix 拦截 `Playable_Animation.PlayAsset(PlayableAsset)`，按 asset 资源名判定是否处决过场** → 改播自制和解演出 | `RescuedKindMita` | 🟡 静态✓ 动态重 |
 | 终局 | 结局结算/场景跳转 | `Scene_Load.GoScene/SaveGame`、`World.isContinue`/`eventContinueScene`、`MenuNextLocation.Click` | `TrueEndingUnlocked` → 改向自制真结局场景；否则全放行 | — | 🟡 静态✓ |
 | （参考）自杀结局 | 拔卡带自删 | `Basement_SafeConsole.TakeCartridge()` + `DataMoshActive/ExitGame` | 不改，仅作"改写结局流向"的现成参考 | — | ✅ |
+
+**动态核对追加（2026-08-26）：**
+
+- 🟡 补偿检查：每个候选拦截事件被跳过/改写后，原版本该调用的剧情进度标记
+  （`World.SaveStoryMita` / `SaveStoryCartridge` 等）还会不会发生？若不会，拦截补丁必须**补偿调用**，
+  否则"继续游戏/读档"的进度链可能断裂。
+- 🟡 存档点机制：`Scene_Load.SilentSave(int)` 的 id 清单（存档点 ↔ 章节映射）——
+  后续测试演出、复看结局全靠它跳关。
+- 🟡 `MenuEnding` 与"和平模式"菜单解锁逻辑（留下结局回主界面后出现）—— 日后做分歧点/菜单联动用，暂缓。
 
 ## 0-4 伏笔触发点
 

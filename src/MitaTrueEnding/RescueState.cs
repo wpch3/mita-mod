@@ -14,7 +14,7 @@ namespace MitaTrueEnding;
 /// - 独立 JSON 存到 BepInEx/config 目录，由剧情拦截点在运行时读写；
 /// - 拦截判定一律以 <see cref="PerfectEndingUnlocked"/> / <see cref="TrueEndingUnlocked"/> 为准，未满足时游戏完全走原版流程。
 /// - 双结局（用户 2026-08-26 定稿）：完美结局=全员存活（AllRescued）；
-///   真结局=全员存活+伏笔道具（TrueEndingUnlocked），米塔们随主角回现实生活。
+///   真结局=全员存活+伏笔道具（TrueEndingUnlocked），米塔们随主角回现实——真·后宫结局。
 /// </summary>
 public sealed class RescueState
 {

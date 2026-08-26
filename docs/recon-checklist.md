@@ -3,6 +3,9 @@
 > 输入：MiSide 游戏 + BepInEx 6 IL2CPP + UnityExplorer（BepInEx IL2CPP CoreCLR 版）+ dnSpy + Il2CppDumper。
 > 产出（本阶段唯一交付物）：**下方对照表全部填实**，并有一个能在游戏日志里打印的 hello patch。
 > ⚠️ 不搞完本阶段不要写剧情补丁 —— v1 Gemini 方案里的类名全是占位符。
+>
+> 📌 进度：**静态侧已基本完成**（0-1.6 ReconDump 报告已入库 `docs/recon-reports/`，结论见文末 §0-7）。
+> 剩余：动态侧场景名对照（边玩边跑 0-1.5 收集的 `MitaTE-recon.log`）。
 
 ## 0-1 环境搭建
 
@@ -50,23 +53,25 @@
 
 | # | 目标 | 要找什么 | 首选工具 | 状态 |
 |---|---|---|---|---|
-| 1 | 存档系统 | 存档类、读写方法、flag/变量存储格式（只调研，不写入） | dnSpy / UnityExplorer | ☐ |
-| 2 | 对话系统 | 对话显示函数、台词 ID 与头像映射、本地化表位置与格式 | UnityExplorer / AssetRipper | ☐ |
-| 3 | 场景清单 | 全部关卡场景名；终章核心区域场景名；和平模式场景名 | UnityExplorer（Scene 面板） | ☐ |
-| 4 | 掌机小游戏 | 掌机交互对象与得分/通关事件 | UnityExplorer | ☐ |
-| 5 | 结局判定 | 结局选择/场景跳转函数（阶段 1 的首选拦截层） | Il2CppDumper + Ghidra | ☐ |
+| 1 | 存档系统 | 存档类、读写方法、flag/变量存储格式（只调研，不写入） | ReconDump + Ghidra | ✅ 静态定位：`Scene_Load.SaveGame()/SilentSave(int)`、`World.SaveStoryMita/SaveStoryCartridge`；flag 存储结构待定 |
+| 2 | 对话系统 | 对话显示函数、台词 ID 与头像映射、本地化表位置与格式 | ReconDump + 运行时 | ✅ 静态定位：`GameController.PrintDialogue(Dialogue_3DText,bool)`（显示）、`DialogueAdd(Dialogue_3DText,string)`（喂文本）、`DialogueChangerStart`；自定义台词可直接走 DialogueAdd，本地化表注入备选 |
+| 3 | 场景清单 | 全部关卡场景名；终章核心区域场景名；和平模式场景名 | MitaTE-recon.log | 🔄 待动态：玩通关后从日志把 LocationN ↔ 场景名 对上 |
+| 4 | 掌机小游戏 | 掌机交互对象与得分/通关事件 | 运行时 | 🔄 候选类型已见：`MinigamesTelevisionController`（CanTalkAboutGame/TalkReadyListener）、`GamesCore_Main`（核心小游戏） |
+| 5 | 结局判定 | 结局选择/场景跳转函数（阶段 1 的首选拦截层） | ReconDump + Ghidra | ✅ 静态候选：`Scene_Load.GoScene/SaveGame`、`Menu.NextLocation` 流程；参考点 `Basement_SafeConsole.TakeCartridge`（自杀结局） |
 
 ## 0-3 剧情事件 → 拦截点对照表（核心交付物）
 
 逐条对照游戏实际剧情核对"原版事件"列；把触发链反推到可 patch 的方法。
+（2026-08-26 静态侧已填入 ReconDump 确认的候选；🟡 = 待动态确认精确触发点）
 
-| 章节 | 原版事件（待核对） | 触发链：类.方法 | 拦截方式（Prefix 改写 / 结局函数改向） | 写入 flag | 状态 |
+| 章节 | 原版事件（待核对） | 触发链：类.方法（静态候选） | 拦截方式（Prefix 改写 / 结局函数改向） | 写入 flag | 状态 |
 |---|---|---|---|---|---|
-| 循环回廊 | 小米塔被困循环 | `<待填>` | `<待填>` | `RescuedTinyMita` | ☐ |
-| 2D 世界 | 米拉世界崩塌/被抹除 | `<待填>` | `<待填>` | `RescuedMila` | ☐ |
-| 卡比 | 遭疯米塔毒手 | `<待填>` | `<待填>` | `RescuedCappie` | ☐ |
-| 终章·核心区域 | 善良米塔被杀 | `<待填>` | `<待填>` | `RescuedKindMita` | ☐ |
-| 终局 | 结局结算/场景跳转 | `<待填>` | TrueEndingUnlocked → 进自制结局；否则放行 | — | ☐ |
+| 循环回廊 | 小米塔被困循环 | `Location8_InfinityRoom`（TalkWindow/循环房间逻辑）、`Location8_MitaBrokeLife`（受损小米塔） | 🟡 待动态锁定具体事件方法 → Prefix 打断循环 + 带离演出 | `RescuedTinyMita` | 🟡 静态✓ |
+| 2D 世界 | 米拉世界崩塌/被抹除 | `Location18_Novella`（PlayDialogue/NextDialogue/UpdateDialogue）、`Location18_Mita`；"崩塌"大概率是 `Playable_Animation` 过场 | 🟡 拦截崩塌触发（过场或流程方法）→ "备份世界数据"替代演出 | `RescuedMila` | 🟡 静态✓ |
+| 卡比 | 遭疯米塔毒手 | `Location7_MitaCapRepeat`、`Location7_RingWork.DialogueAngryCap` | 🟡 同上思路 | `RescuedCappie` | 🟡 静态✓ |
+| 终章·核心区域 | 善良米塔被杀 | `Location15` + `Location15_MitaKind_Follow`（GoSit/FollowStop）+ `Location15_ScreenID`（编号输入）+ `Core_Entry`（核心门 OnTriggerEnter/DoorClick）；死亡推定为 `Playable_Animation.Play/PlayAsset` 过场 | **首选层：Prefix 拦截 `Playable_Animation.PlayAsset(PlayableAsset)`，按 asset 资源名判定是否处决过场** → 改播自制和解演出 | `RescuedKindMita` | 🟡 静态✓ 动态重 |
+| 终局 | 结局结算/场景跳转 | `Scene_Load.GoScene/SaveGame`、`World.isContinue`/`eventContinueScene`、`MenuNextLocation.Click` | `TrueEndingUnlocked` → 改向自制真结局场景；否则全放行 | — | 🟡 静态✓ |
+| （参考）自杀结局 | 拔卡带自删 | `Basement_SafeConsole.TakeCartridge()` + `DataMoshActive/ExitGame` | 不改，仅作"改写结局流向"的现成参考 | — | ✅ |
 
 ## 0-4 伏笔触发点
 
@@ -86,7 +91,36 @@
 
 ## 0-6 验收标准
 
-1. hello patch 在 `BepInEx/LogOutput.log` 正常输出；
-2. 0-3 对照表每一格填实（类名、方法名、签名、调用方）；
+1. hello patch 在 `BepInEx/LogOutput.log` 正常输出；✅（v0.2.1）
+2. 0-3 对照表每一格填实（类名、方法名、签名、调用方）；🟡（静态部分已填，调用方待 Ghidra/运行时）
 3. 明确每个米塔的"最小可行拯救演出"需要哪些资源（动画状态名、台词 ID、声音），全部能在游戏里找到；
 4. 记录游戏版本号与构建哈希（后续游戏更新后用于快速判断失效点）。
+
+## 0-7 静态侦察结论汇总（2026-08-26，源自 ReconDump 报告 `docs/recon-reports/`）
+
+**已确认的骨架（写补丁可直接引用）：**
+
+- **中枢 `GameController`**：`CutscenePlay(Transform)` / `CutsceneStop()`；
+  `DialogueChangerStart(DialogueChanger)`、`PrintDialogue(Dialogue_3DText,bool)`、
+  `DialogueAdd(Dialogue_3DText,string)`（**直接喂自定义台词的现成口**）；
+  `AddKeyItem/RemoveKeyItem/GetKeyItem(GameObject)`（**现成道具系统，伏笔物直接挂**）
+- **过场系统**：`Playable_Animation.Play()` / `PlayAsset(PlayableAsset)`（拦截首选，
+  有 `eventStart/eventStop` UnityEvent）、`World.cutsceneStart`、
+  `World.eventStart/eventContinueScene/eventFirstStart`
+- **米塔基类 `MitaPerson`**：`animMita`（Animator）+ `FaceEmotion(string)/FaceEmotionFast`
+  （表情库！）+ `AiWalkToTarget(Transform,UnityEvent)`、`MagnetToTarget`、`MitaTeleport`
+  （**和解演出的走位/表情工具全套现成**）
+- **存档与流程**：`Scene_Load.SaveGame()/SilentSave(int)/GoScene()`、
+  `World.SaveStoryMita/SaveStoryCartridge/isContinue`
+- **终章（Location15 = 核心章节）**：`Location15_ScreenID`（角色界面编号输入）、
+  `Location15_MitaKind_Follow`（善良米塔跟随+坐下）、`Core_Entry`（核心门）、
+  `Core_Chair/Core_Life/CoreScreens`（核心装置）、`MitaCore`（纯骨骼跟随，无剧情逻辑）
+- **2D 世界（Location18）**：`Location18_Novella`（视觉小说控制器 PlayDialogue/NextDialogue）、`Location18_Mita`（米拉）
+- **卡比（Location7）**：`Location7_MitaCapRepeat`、`Location7_RingWork.DialogueAngryCap`
+- **循环回廊（Location8）**：`Location8_InfinityRoom`、`Location8_MitaBrokeLife`
+- **终局场景候选**：`Location21`（Cooking/Eating 厨房+对话）与 `Location34`（Communication/Glasses/PositionForMita）
+- **其他**：`Time_Events`（YieldRestart 系列，时机事件引擎）、`Location6_MitaKiller`（追杀米塔）、
+  `ConsoleCommandsGame`（内置作弊控制台，调试可参考）
+
+**仍待动态确认：** 各 LocationN ↔ 场景名/章节对照；处决过场的确切 `PlayableAsset` 资源名；
+`Time_Events` 在结局链中的角色；亲测回撤能否用 `Playable_Animation` 单独拦下一段过场而不牵连同场景其他过场。

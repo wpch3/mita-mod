@@ -1,0 +1,251 @@
+[01:40:19] === Recon 组件启动：场景切换记录已开启；游戏内按 F9 打印当前场景根对象 ===
+[01:40:21] 场景加载: "SceneAihasto"  path="Assets/Scenes/Menu/SceneAihasto.unity"  roots=1
+[01:40:30] 场景加载: "SceneLoading"  path="Assets/Scenes/Menu/SceneLoading.unity"  roots=2
+[01:40:36] 场景加载: "SceneMenu"  path="Assets/Scenes/Menu/SceneMenu.unity"  roots=1
+[10:53:19] === Recon 组件启动：场景切换记录已开启；游戏内按 F9 打印当前场景根对象 ===
+[10:53:21] 场景加载: "SceneAihasto"  path="Assets/Scenes/Menu/SceneAihasto.unity"  roots=1
+[10:53:30] 场景加载: "SceneLoading"  path="Assets/Scenes/Menu/SceneLoading.unity"  roots=2
+[10:53:36] 场景加载: "SceneMenu"  path="Assets/Scenes/Menu/SceneMenu.unity"  roots=1
+[10:54:36] 场景加载: "SceneLoading"  path="Assets/Scenes/Menu/SceneLoading.unity"  roots=2
+[10:54:38] 场景加载: "Scene 1 - RealRoom"  path="Assets/Scenes/Game/Scene 1 - RealRoom.unity"  roots=2
+[10:55:05] --- F9 快照: 当前场景 "Scene 1 - RealRoom"，共 3 个根对象 ---
+[10:55:05]     [on ] World
+[10:55:05]     [on ] World Out
+[10:55:05]     [on ] Pooled Reflector 0
+[10:56:47] --- F9 快照: 当前场景 "Scene 1 - RealRoom"，共 3 个根对象 ---
+[10:56:47]     [on ] World
+[10:56:47]     [on ] World Out
+[10:56:47]     [on ] Pooled Reflector 0
+[10:57:22] --- F9 快照: 当前场景 "Scene 1 - RealRoom"，共 3 个根对象 ---
+[10:57:22]     [on ] World
+[10:57:22]     [on ] World Out
+[10:57:22]     [on ] Pooled Reflector 0
+[10:58:07] --- F9 快照: 当前场景 "Scene 1 - RealRoom"，共 3 个根对象 ---
+[10:58:07]     [on ] World
+[10:58:07]     [on ] World Out
+[10:58:07]     [on ] Pooled Reflector 0
+[10:58:08] --- F9 快照: 当前场景 "Scene 1 - RealRoom"，共 3 个根对象 ---
+[10:58:08]     [on ] World
+[10:58:08]     [on ] World Out
+[10:58:08]     [on ] Pooled Reflector 0
+[10:58:08] --- F9 快照: 当前场景 "Scene 1 - RealRoom"，共 3 个根对象 ---
+[10:58:08]     [on ] World
+[10:58:08]     [on ] World Out
+[10:58:08]     [on ] Pooled Reflector 0
+[10:58:11] 场景加载: "SceneLoading"  path="Assets/Scenes/Menu/SceneLoading.unity"  roots=2
+[10:58:13] 场景加载: "SceneMenu"  path="Assets/Scenes/Menu/SceneMenu.unity"  roots=1
+[10:59:30] === Recon 组件启动：场景切换记录已开启；游戏内按 F9 打印当前场景根对象 ===
+[10:59:32] 场景加载: "SceneAihasto"  path="Assets/Scenes/Menu/SceneAihasto.unity"  roots=1
+[10:59:41] 场景加载: "SceneLoading"  path="Assets/Scenes/Menu/SceneLoading.unity"  roots=2
+[10:59:46] 场景加载: "SceneMenu"  path="Assets/Scenes/Menu/SceneMenu.unity"  roots=1
+[11:00:03] 场景加载: "SceneLoading"  path="Assets/Scenes/Menu/SceneLoading.unity"  roots=2
+[11:00:05] 场景加载: "Scene 1 - RealRoom"  path="Assets/Scenes/Game/Scene 1 - RealRoom.unity"  roots=2
+[11:00:30] --- F9 快照: 当前场景 "Scene 1 - RealRoom"，共 3 个根对象 ---
+[11:00:30]     [on ] World
+[11:00:30]     [on ] World Out
+[11:00:30]     [on ] Pooled Reflector 0
+[11:03:45] === Recon 组件启动：场景切换记录已开启；游戏内按 F9 打印当前场景根对象 ===
+[11:03:48] 场景加载: "SceneAihasto"  path="Assets/Scenes/Menu/SceneAihasto.unity"  roots=1
+[11:03:56] 场景加载: "SceneLoading"  path="Assets/Scenes/Menu/SceneLoading.unity"  roots=2
+[11:04:02] 场景加载: "SceneMenu"  path="Assets/Scenes/Menu/SceneMenu.unity"  roots=1
+[11:04:10] 场景加载: "SceneLoading"  path="Assets/Scenes/Menu/SceneLoading.unity"  roots=2
+[11:04:12] 场景加载: "Scene 1 - RealRoom"  path="Assets/Scenes/Game/Scene 1 - RealRoom.unity"  roots=2
+[11:09:10] === Recon 组件启动：场景切换记录已开启；游戏内按 F9 打印当前场景根对象 ===
+[11:09:13] 场景加载: "SceneAihasto"  path="Assets/Scenes/Menu/SceneAihasto.unity"  roots=1
+[11:09:21] 场景加载: "SceneLoading"  path="Assets/Scenes/Menu/SceneLoading.unity"  roots=2
+[11:09:27] 场景加载: "SceneMenu"  path="Assets/Scenes/Menu/SceneMenu.unity"  roots=1
+[11:09:38] 场景加载: "SceneLoading"  path="Assets/Scenes/Menu/SceneLoading.unity"  roots=2
+[11:09:40] 场景加载: "Scene 1 - RealRoom"  path="Assets/Scenes/Game/Scene 1 - RealRoom.unity"  roots=2
+[11:13:51] === Recon 组件启动：场景切换记录已开启；游戏内按 F9 打印当前场景根对象 ===
+[11:13:54] 场景加载: "SceneAihasto"  path="Assets/Scenes/Menu/SceneAihasto.unity"  roots=1
+[11:14:02] 场景加载: "SceneLoading"  path="Assets/Scenes/Menu/SceneLoading.unity"  roots=2
+[11:14:13] 场景加载: "SceneMenu"  path="Assets/Scenes/Menu/SceneMenu.unity"  roots=1
+[11:14:23] 场景加载: "SceneLoading"  path="Assets/Scenes/Menu/SceneLoading.unity"  roots=2
+[11:14:24] 场景加载: "Scene 1 - RealRoom"  path="Assets/Scenes/Game/Scene 1 - RealRoom.unity"  roots=2
+[11:21:34] === Recon 组件启动：场景切换记录已开启；游戏内按 F9 打印当前场景根对象 ===
+[11:21:37] 场景加载: "SceneAihasto"  path="Assets/Scenes/Menu/SceneAihasto.unity"  roots=1
+[11:21:45] 场景加载: "SceneLoading"  path="Assets/Scenes/Menu/SceneLoading.unity"  roots=2
+[11:21:51] 场景加载: "SceneMenu"  path="Assets/Scenes/Menu/SceneMenu.unity"  roots=1
+[11:22:01] 场景加载: "SceneLoading"  path="Assets/Scenes/Menu/SceneLoading.unity"  roots=2
+[11:22:08] 场景加载: "Scene 1 - RealRoom"  path="Assets/Scenes/Game/Scene 1 - RealRoom.unity"  roots=2
+[11:31:33] === Recon 组件启动：场景切换记录已开启；游戏内按 F9 打印当前场景根对象 ===
+[11:31:36] 场景加载: "SceneAihasto"  path="Assets/Scenes/Menu/SceneAihasto.unity"  roots=1
+[11:31:44] 场景加载: "SceneLoading"  path="Assets/Scenes/Menu/SceneLoading.unity"  roots=2
+[11:31:54] 场景加载: "SceneMenu"  path="Assets/Scenes/Menu/SceneMenu.unity"  roots=1
+[11:32:03] 场景加载: "SceneLoading"  path="Assets/Scenes/Menu/SceneLoading.unity"  roots=2
+[11:32:06] 场景加载: "Scene 1 - RealRoom"  path="Assets/Scenes/Game/Scene 1 - RealRoom.unity"  roots=2
+[11:33:50] --- F9 快照: 当前场景 "Scene 1 - RealRoom"，共 3 个根对象 ---
+[11:33:50]     [on ] World
+[11:33:50]     [on ] World Out
+[11:33:50]     [on ] Pooled Reflector 0
+[11:34:02] --- F9 快照: 当前场景 "Scene 1 - RealRoom"，共 3 个根对象 ---
+[11:34:02]     [on ] World
+[11:34:02]     [on ] World Out
+[11:34:02]     [on ] Pooled Reflector 0
+[11:37:07] 场景加载: "Scene 2 - InGame"  path="Assets/Scenes/Game/Scene 2 - InGame.unity"  roots=1
+[11:37:17] --- F9 快照: 当前场景 "Scene 2 - InGame"，共 1 个根对象 ---
+[11:37:17]     [on ] World
+[11:37:25] --- F9 快照: 当前场景 "Scene 2 - InGame"，共 2 个根对象 ---
+[11:37:25]     [on ] World
+[11:37:25]     [on ] InterfaceSave(Clone)
+[11:37:41] --- F9 快照: 当前场景 "Scene 2 - InGame"，共 1 个根对象 ---
+[11:37:41]     [on ] World
+[11:47:06] 场景加载: "Scene 3 - WeTogether"  path="Assets/Scenes/Game/Scene 3 - WeTogether.unity"  roots=1
+[11:49:06] --- F9 快照: 当前场景 "Scene 3 - WeTogether"，共 1 个根对象 ---
+[11:49:06]     [on ] World
+[11:49:10] --- F9 快照: 当前场景 "Scene 3 - WeTogether"，共 1 个根对象 ---
+[11:49:10]     [on ] World
+[11:51:41] --- F9 快照: 当前场景 "Scene 3 - WeTogether"，共 1 个根对象 ---
+[11:51:41]     [on ] World
+[11:53:11] --- F9 快照: 当前场景 "Scene 3 - WeTogether"，共 1 个根对象 ---
+[11:53:11]     [on ] World
+[11:56:07] 场景加载: "SceneLoading"  path="Assets/Scenes/Menu/SceneLoading.unity"  roots=2
+[11:56:10] 场景加载: "SceneMenu"  path="Assets/Scenes/Menu/SceneMenu.unity"  roots=1
+[12:15:34] === Recon v2 启动：场景切换自动快照已开启（1.5s/8s 两次抓取，同场景覆盖、异场景保留）===
+[12:15:34] === 快照文件: D:\steam\steamapps\common\MiSide\BepInEx\config\MitaTE-scene-snapshots.log · 时间序日志: D:\steam\steamapps\common\MiSide\BepInEx\config\MitaTE-recon.log · F9=立即补抓 ===
+[12:15:37] 场景加载: "SceneAihasto"  path="Assets/Scenes/Menu/SceneAihasto.unity"  roots=1  mode=2
+[12:15:37] 自动快照: "SceneAihasto" roots=1（快照文件已更新，共 1 个场景）
+[12:15:43] 自动快照: "SceneAihasto" roots=1（快照文件已更新，共 1 个场景）
+[12:15:45] 场景加载: "SceneLoading"  path="Assets/Scenes/Menu/SceneLoading.unity"  roots=2  mode=Single
+[12:15:46] 自动快照: "SceneLoading" roots=2（快照文件已更新，共 2 个场景）
+[12:15:51] 场景加载: "SceneMenu"  path="Assets/Scenes/Menu/SceneMenu.unity"  roots=1  mode=Single
+[12:15:53] 自动快照: "SceneMenu" roots=1（快照文件已更新，共 3 个场景）
+[12:15:59] 自动快照: "SceneMenu" roots=1（快照文件已更新，共 3 个场景）
+[13:55:27] === Recon v2 启动：场景切换自动快照已开启（1.5s/8s 两次抓取，同场景覆盖、异场景保留）===
+[13:55:27] === 快照文件: D:\steam\steamapps\common\MiSide\BepInEx\config\MitaTE-scene-snapshots.log · 时间序日志: D:\steam\steamapps\common\MiSide\BepInEx\config\MitaTE-recon.log · F9=立即补抓 ===
+[13:55:30] 场景加载: "SceneAihasto"  path="Assets/Scenes/Menu/SceneAihasto.unity"  roots=1  mode=2
+[13:55:31] 过场触发[Play] asset="LogoPresent" scene="SceneAihasto" go="Scene"
+[13:55:31] 自动快照: "SceneAihasto" roots=1（快照文件已更新，共 3 个场景）
+[13:55:36] 自动快照: "SceneAihasto" roots=1（快照文件已更新，共 3 个场景）
+[13:55:39] 场景加载: "SceneLoading"  path="Assets/Scenes/Menu/SceneLoading.unity"  roots=2  mode=Single
+[13:55:40] 自动快照: "SceneLoading" roots=2（快照文件已更新，共 3 个场景）
+[13:55:44] 场景加载: "SceneMenu"  path="Assets/Scenes/Menu/SceneMenu.unity"  roots=1  mode=Single
+[13:55:46] 自动快照: "SceneMenu" roots=1（快照文件已更新，共 3 个场景）
+[13:55:52] 自动快照: "SceneMenu" roots=1（快照文件已更新，共 3 个场景）
+[14:13:26] === Recon v2 启动：场景切换自动快照已开启（1.5s/8s 两次抓取，同场景覆盖、异场景保留）===
+[14:13:26] === 快照文件: D:\steam\steamapps\common\MiSide\BepInEx\config\MitaTE-scene-snapshots.log · 时间序日志: D:\steam\steamapps\common\MiSide\BepInEx\config\MitaTE-recon.log · F9=立即补抓 ===
+[14:13:29] 场景加载: "SceneAihasto"  path="Assets/Scenes/Menu/SceneAihasto.unity"  roots=1  mode=2
+[14:13:30] 过场触发[Play] asset="LogoPresent" scene="SceneAihasto" go="Scene"
+[14:13:30] 自动快照: "SceneAihasto" roots=1（快照文件已更新，共 3 个场景）
+[14:13:35] 自动快照: "SceneAihasto" roots=1（快照文件已更新，共 3 个场景）
+[14:13:39] 场景加载: "SceneLoading"  path="Assets/Scenes/Menu/SceneLoading.unity"  roots=2  mode=Single
+[14:13:40] 自动快照: "SceneLoading" roots=2（快照文件已更新，共 3 个场景）
+[14:13:45] 场景加载: "SceneMenu"  path="Assets/Scenes/Menu/SceneMenu.unity"  roots=1  mode=Single
+[14:13:46] 自动快照: "SceneMenu" roots=1（快照文件已更新，共 3 个场景）
+[14:13:53] 自动快照: "SceneMenu" roots=1（快照文件已更新，共 3 个场景）
+[14:14:38] 场景加载: "SceneLoading"  path="Assets/Scenes/Menu/SceneLoading.unity"  roots=2  mode=Single
+[14:14:40] 自动快照: "SceneLoading" roots=2（快照文件已更新，共 3 个场景）
+[14:14:40] 场景加载: "Scene 2 - InGame"  path="Assets/Scenes/Game/Scene 2 - InGame.unity"  roots=1  mode=Single
+[14:14:41] 自动快照: "Scene 2 - InGame" roots=1（快照文件已更新，共 4 个场景）
+[14:14:46] 场景加载: "SceneLoading"  path="Assets/Scenes/Menu/SceneLoading.unity"  roots=2  mode=Single
+[14:14:46] 自动快照: "SceneLoading" roots=2（快照文件已更新，共 4 个场景）
+[14:14:47] 自动快照: "SceneLoading" roots=2（快照文件已更新，共 4 个场景）
+[14:14:48] 场景加载: "SceneMenu"  path="Assets/Scenes/Menu/SceneMenu.unity"  roots=1  mode=Single
+[14:14:49] 自动快照: "SceneMenu" roots=1（快照文件已更新，共 4 个场景）
+[14:14:56] 自动快照: "SceneMenu" roots=1（快照文件已更新，共 4 个场景）
+[14:14:58] 场景加载: "SceneLoading"  path="Assets/Scenes/Menu/SceneLoading.unity"  roots=2  mode=Single
+[14:15:00] 自动快照: "SceneLoading" roots=2（快照文件已更新，共 4 个场景）
+[14:15:06] 场景加载: "Scene 3 - WeTogether"  path="Assets/Scenes/Game/Scene 3 - WeTogether.unity"  roots=1  mode=Single
+[14:15:07] 自动快照: "Scene 3 - WeTogether" roots=1（快照文件已更新，共 5 个场景）
+[14:15:14] 自动快照: "Scene 3 - WeTogether" roots=1（快照文件已更新，共 5 个场景）
+[14:18:08] === Recon v2 启动：场景切换自动快照已开启（1.5s/8s 两次抓取，同场景覆盖、异场景保留）===
+[14:18:08] === 快照文件: D:\steam\steamapps\common\MiSide\BepInEx\config\MitaTE-scene-snapshots.log · 时间序日志: D:\steam\steamapps\common\MiSide\BepInEx\config\MitaTE-recon.log · F9=立即补抓 ===
+[14:18:11] 场景加载: "SceneAihasto"  path="Assets/Scenes/Menu/SceneAihasto.unity"  roots=1  mode=2
+[14:18:11] 过场触发[Play] asset="LogoPresent" scene="SceneAihasto" go="Scene"
+[14:18:11] 自动快照: "SceneAihasto" roots=1（快照文件已更新，共 5 个场景）
+[14:18:17] 自动快照: "SceneAihasto" roots=1（快照文件已更新，共 5 个场景）
+[14:18:20] 场景加载: "SceneLoading"  path="Assets/Scenes/Menu/SceneLoading.unity"  roots=2  mode=Single
+[14:18:21] 自动快照: "SceneLoading" roots=2（快照文件已更新，共 5 个场景）
+[14:18:26] 场景加载: "SceneMenu"  path="Assets/Scenes/Menu/SceneMenu.unity"  roots=1  mode=Single
+[14:18:27] 自动快照: "SceneMenu" roots=1（快照文件已更新，共 5 个场景）
+[14:18:34] 自动快照: "SceneMenu" roots=1（快照文件已更新，共 5 个场景）
+[14:19:06] 场景加载: "SceneLoading"  path="Assets/Scenes/Menu/SceneLoading.unity"  roots=2  mode=Single
+[14:19:07] 自动快照: "SceneLoading" roots=2（快照文件已更新，共 5 个场景）
+[14:19:08] 场景加载: "Scene 3 - WeTogether"  path="Assets/Scenes/Game/Scene 3 - WeTogether.unity"  roots=1  mode=Single
+[14:19:10] 自动快照: "Scene 3 - WeTogether" roots=1（快照文件已更新，共 5 个场景）
+[14:19:16] 自动快照: "Scene 3 - WeTogether" roots=1（快照文件已更新，共 5 个场景）
+[14:20:51] 场景加载: "SceneLoading"  path="Assets/Scenes/Menu/SceneLoading.unity"  roots=2  mode=Single
+[14:20:53] 自动快照: "SceneLoading" roots=2（快照文件已更新，共 5 个场景）
+[14:20:54] 场景加载: "SceneMenu"  path="Assets/Scenes/Menu/SceneMenu.unity"  roots=1  mode=Single
+[14:20:56] 自动快照: "SceneMenu" roots=1（快照文件已更新，共 5 个场景）
+[15:51:33] === Recon v2 启动：场景切换自动快照已开启（1.5s/8s 两次抓取，同场景覆盖、异场景保留）===
+[15:51:33] === 快照文件: D:\steam\steamapps\common\MiSide\BepInEx\config\MitaTE-scene-snapshots.log · 时间序日志: D:\steam\steamapps\common\MiSide\BepInEx\config\MitaTE-recon.log · F9=立即补抓 ===
+[15:51:37] 场景加载: "SceneAihasto"  path="Assets/Scenes/Menu/SceneAihasto.unity"  roots=1  mode=2
+[15:51:37] 过场触发[Play] asset="LogoPresent" scene="SceneAihasto" go="Scene"
+[15:51:37] 自动快照: "SceneAihasto" roots=1（快照文件已更新，共 5 个场景）
+[15:51:43] 自动快照: "SceneAihasto" roots=1（快照文件已更新，共 5 个场景）
+[15:51:46] 场景加载: "SceneLoading"  path="Assets/Scenes/Menu/SceneLoading.unity"  roots=2  mode=Single
+[15:51:47] 自动快照: "SceneLoading" roots=2（快照文件已更新，共 5 个场景）
+[15:51:54] 自动快照: "SceneLoading" roots=2（快照文件已更新，共 5 个场景）
+[15:51:57] 场景加载: "SceneMenu"  path="Assets/Scenes/Menu/SceneMenu.unity"  roots=1  mode=Single
+[15:51:58] 自动快照: "SceneMenu" roots=1（快照文件已更新，共 5 个场景）
+[15:52:05] 自动快照: "SceneMenu" roots=1（快照文件已更新，共 5 个场景）
+[15:52:53] 场景加载: "SceneLoading"  path="Assets/Scenes/Menu/SceneLoading.unity"  roots=2  mode=Single
+[15:52:55] 自动快照: "SceneLoading" roots=2（快照文件已更新，共 5 个场景）
+[15:52:55] 场景加载: "Scene 1 - RealRoom"  path="Assets/Scenes/Game/Scene 1 - RealRoom.unity"  roots=2  mode=Single
+[15:52:55] 过场触发[Play] asset="<director 未挂资源>" scene="Scene 1 - RealRoom" go="CutScene 1 (ДЕНЬ 1)"
+[15:52:55] 过场触发[Play] asset="Scene 1 StartGame" scene="Scene 1 - RealRoom" go="CutScene 1 (ДЕНЬ 1)"
+[15:52:56] 自动快照: "Scene 1 - RealRoom" roots=2（快照文件已更新，共 6 个场景）
+[15:53:03] 自动快照: "Scene 1 - RealRoom" roots=2（快照文件已更新，共 6 个场景）
+[15:54:39] 过场触发[Play] asset="Scene 2 Day 2" scene="Scene 1 - RealRoom" go="CutScene 2 (ДЕНЬ 2)"
+[15:55:24] 过场触发[Play] asset="Scene 2 Day 2" scene="Scene 1 - RealRoom" go="CutScene 3 (ДЕНЬ 5)"
+[15:56:13] 过场触发[Play] asset="Scene 2 Day 2" scene="Scene 1 - RealRoom" go="CutScene 4 (ДЕНЬ 10)"
+[15:56:48] 过场触发[Play] asset="Scene 2 Day 2" scene="Scene 1 - RealRoom" go="CutScene 5 (ДЕНЬ 20)"
+[15:56:57] 过场触发[Play] asset="Scene 2 Day 2" scene="Scene 1 - RealRoom" go="CutScene 6 (ДЕНЬ 33)"
+[15:57:07] 过场触发[Play] asset="Scene 2 Day 2" scene="Scene 1 - RealRoom" go="CutScene 7 (ДЕНЬ 37)"
+[15:57:26] 场景加载: "Scene 2 - InGame"  path="Assets/Scenes/Game/Scene 2 - InGame.unity"  roots=1  mode=Single
+[15:57:28] 自动快照: "Scene 2 - InGame" roots=1（快照文件已更新，共 6 个场景）
+[15:57:34] 自动快照: "Scene 2 - InGame" roots=1（快照文件已更新，共 6 个场景）
+[16:05:10] 场景加载: "Scene 3 - WeTogether"  path="Assets/Scenes/Game/Scene 3 - WeTogether.unity"  roots=1  mode=Single
+[16:05:11] 自动快照: "Scene 3 - WeTogether" roots=1（快照文件已更新，共 6 个场景）
+[16:05:18] 自动快照: "Scene 3 - WeTogether" roots=1（快照文件已更新，共 6 个场景）
+[18:11:36] 过场触发[Play] asset="Television" scene="Scene 3 - WeTogether" go="Channel 3"
+[18:20:17] 场景加载: "Scene 4 - StartSecret"  path="Assets/Scenes/Game/Scene 4 - StartSecret.unity"  roots=1  mode=Single
+[18:20:19] 自动快照: "Scene 4 - StartSecret" roots=1（快照文件已更新，共 7 个场景）
+[18:20:25] 自动快照: "Scene 4 - StartSecret" roots=2（快照文件已更新，共 7 个场景）
+[18:29:19] 场景加载: "Scene 5 - StartHorror"  path="Assets/Scenes/Game/Scene 5 - StartHorror.unity"  roots=1  mode=Single
+[18:29:20] 自动快照: "Scene 5 - StartHorror" roots=1（快照文件已更新，共 8 个场景）
+[18:29:27] 自动快照: "Scene 5 - StartHorror" roots=1（快照文件已更新，共 8 个场景）
+[18:35:44] 过场触发[Play] asset="LegsRun" scene="Scene 5 - StartHorror" go="LegsRun"
+[18:40:52] 场景加载: "Scene 6 - BasementFirst"  path="Assets/Scenes/Game/Scene 6 - BasementFirst.unity"  roots=1  mode=Additive
+[18:40:53] 自动快照: "Scene 6 - BasementFirst" roots=1（快照文件已更新，共 9 个场景）
+[18:41:00] 自动快照: "Scene 6 - BasementFirst" roots=1（快照文件已更新，共 9 个场景）
+[19:02:56] 场景加载: "Scene 7 - Backrooms"  path="Assets/Scenes/Game/Scene 7 - Backrooms.unity"  roots=1  mode=Additive
+[19:02:56] 场景加载: "SceneLoading"  path="Assets/Scenes/Menu/SceneLoading.unity"  roots=2  mode=Single
+[19:02:58] 自动快照: "SceneLoading" roots=2（快照文件已更新，共 9 个场景）
+[19:03:05] 自动快照: "SceneLoading" roots=2（快照文件已更新，共 9 个场景）
+[19:03:06] 场景加载: "SceneMenu"  path="Assets/Scenes/Menu/SceneMenu.unity"  roots=1  mode=Single
+[19:03:08] 自动快照: "SceneMenu" roots=1（快照文件已更新，共 9 个场景）
+[19:21:59] === Recon v2 启动：场景切换自动快照已开启（1.5s/8s 两次抓取，同场景覆盖、异场景保留）===
+[19:21:59] === 快照文件: D:\steam\steamapps\common\MiSide\BepInEx\config\MitaTE-scene-snapshots.log · 时间序日志: D:\steam\steamapps\common\MiSide\BepInEx\config\MitaTE-recon.log · F9=立即补抓 ===
+[19:22:02] 场景加载: "SceneAihasto"  path="Assets/Scenes/Menu/SceneAihasto.unity"  roots=1  mode=2
+[19:22:02] 过场触发[Play] asset="LogoPresent" scene="SceneAihasto" go="Scene"
+[19:22:02] 自动快照: "SceneAihasto" roots=1（快照文件已更新，共 9 个场景）
+[19:22:08] 自动快照: "SceneAihasto" roots=1（快照文件已更新，共 9 个场景）
+[19:22:11] 场景加载: "SceneLoading"  path="Assets/Scenes/Menu/SceneLoading.unity"  roots=2  mode=Single
+[19:22:12] 自动快照: "SceneLoading" roots=2（快照文件已更新，共 9 个场景）
+[19:22:21] 场景加载: "SceneMenu"  path="Assets/Scenes/Menu/SceneMenu.unity"  roots=1  mode=Single
+[19:22:21] 自动快照: "SceneMenu" roots=1（快照文件已更新，共 9 个场景）
+[19:22:25] 自动快照: "SceneMenu" roots=1（快照文件已更新，共 9 个场景）
+[19:22:35] 场景加载: "SceneLoading"  path="Assets/Scenes/Menu/SceneLoading.unity"  roots=2  mode=Single
+[19:22:37] 自动快照: "SceneLoading" roots=2（快照文件已更新，共 9 个场景）
+[19:22:37] 场景加载: "Scene 6 - BasementFirst"  path="Assets/Scenes/Game/Scene 6 - BasementFirst.unity"  roots=1  mode=Single
+[19:22:38] 自动快照: "Scene 6 - BasementFirst" roots=1（快照文件已更新，共 9 个场景）
+[19:22:45] 自动快照: "Scene 6 - BasementFirst" roots=1（快照文件已更新，共 9 个场景）
+[19:25:05] === Recon v2 启动：场景切换自动快照已开启（1.5s/8s 两次抓取，同场景覆盖、异场景保留）===
+[19:25:05] === 快照文件: D:\steam\steamapps\common\MiSide\BepInEx\config\MitaTE-scene-snapshots.log · 时间序日志: D:\steam\steamapps\common\MiSide\BepInEx\config\MitaTE-recon.log · F9=立即补抓 ===
+[19:25:07] 场景加载: "SceneAihasto"  path="Assets/Scenes/Menu/SceneAihasto.unity"  roots=1  mode=2
+[19:25:08] 过场触发[Play] asset="LogoPresent" scene="SceneAihasto" go="Scene"
+[19:25:08] 自动快照: "SceneAihasto" roots=1（快照文件已更新，共 9 个场景）
+[19:25:13] 自动快照: "SceneAihasto" roots=1（快照文件已更新，共 9 个场景）
+[19:25:16] 场景加载: "SceneLoading"  path="Assets/Scenes/Menu/SceneLoading.unity"  roots=2  mode=Single
+[19:25:17] 自动快照: "SceneLoading" roots=2（快照文件已更新，共 9 个场景）
+[19:25:24] 自动快照: "SceneLoading" roots=2（快照文件已更新，共 9 个场景）
+[19:25:27] 场景加载: "SceneMenu"  path="Assets/Scenes/Menu/SceneMenu.unity"  roots=1  mode=Single
+[19:25:28] 自动快照: "SceneMenu" roots=1（快照文件已更新，共 9 个场景）
+[19:25:35] 自动快照: "SceneMenu" roots=1（快照文件已更新，共 9 个场景）
+[19:25:45] 场景加载: "SceneLoading"  path="Assets/Scenes/Menu/SceneLoading.unity"  roots=2  mode=Single
+[19:25:46] 场景加载: "Scene 6 - BasementFirst"  path="Assets/Scenes/Game/Scene 6 - BasementFirst.unity"  roots=1  mode=Single
+[19:25:48] 自动快照: "Scene 6 - BasementFirst" roots=1（快照文件已更新，共 9 个场景）
+[19:25:54] 自动快照: "Scene 6 - BasementFirst" roots=1（快照文件已更新，共 9 个场景）
+[19:32:26] 场景加载: "Scene 7 - Backrooms"  path="Assets/Scenes/Game/Scene 7 - Backrooms.unity"  roots=1  mode=Additive

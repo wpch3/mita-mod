@@ -1,0 +1,32 @@
+# MitaTE 场景快照 · 规则: 同场景覆盖 / 异场景保留 · 最近写入 2026-08-26 19:25:54
+# 已记录场景数: 9
+
+===== 场景: "Scene 1 - RealRoom" | path="Assets/Scenes/Game/Scene 1 - RealRoom.unity" | roots=2 | 抓取:  =====
+    [on ] World
+    [on ] World Out
+
+===== 场景: "Scene 2 - InGame" | path="Assets/Scenes/Game/Scene 2 - InGame.unity" | roots=1 | 抓取:  =====
+    [on ] World
+
+===== 场景: "Scene 3 - WeTogether" | path="Assets/Scenes/Game/Scene 3 - WeTogether.unity" | roots=1 | 抓取:  =====
+    [on ] World
+
+===== 场景: "Scene 4 - StartSecret" | path="Assets/Scenes/Game/Scene 4 - StartSecret.unity" | roots=2 | 抓取:  =====
+    [on ] InterfaceSave(Clone)
+    [on ] World
+
+===== 场景: "Scene 5 - StartHorror" | path="Assets/Scenes/Game/Scene 5 - StartHorror.unity" | roots=1 | 抓取:  =====
+    [on ] World
+
+===== 场景: "Scene 6 - BasementFirst" | path="Assets/Scenes/Game/Scene 6 - BasementFirst.unity" | roots=1 | 抓取: 19:25:54 =====
+    [on ] World
+
+===== 场景: "SceneAihasto" | path="Assets/Scenes/Menu/SceneAihasto.unity" | roots=1 | 抓取: 19:25:13 =====
+    [on ] Scene
+
+===== 场景: "SceneLoading" | path="Assets/Scenes/Menu/SceneLoading.unity" | roots=2 | 抓取: 19:25:24 =====
+    [off] ChangeLanguage
+    [on ] MenuGame
+
+===== 场景: "SceneMenu" | path="Assets/Scenes/Menu/SceneMenu.unity" | roots=1 | 抓取: 19:25:35 =====
+    [on ] MenuGame

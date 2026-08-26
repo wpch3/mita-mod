@@ -1,0 +1,204 @@
+[Message: Preloader] BepInEx 6.0.0-be.697 - MiSideFull
+[Message: Preloader] Built from commit 53625800b86f6c68751445248260edf0b27a71c2
+[Info   :   BepInEx] System platform: Windows 10 64-bit
+[Info   :   BepInEx] Process bitness: 64-bit (x64)
+[Info   :   BepInEx] Running under Unity 2021.3.35f1
+[Info   :   BepInEx] Runtime version: 6.0.7
+[Info   :   BepInEx] Runtime information: .NET 6.0.7
+[Info   : Preloader] 0 patcher plugins loaded
+[Info   : Preloader] 0 assemblies discovered
+[Message:AssemblyPatcher] Executing 0 patch(es)
+[Message:   BepInEx] Chainloader initialized
+[Warning:Il2CppInterop] Class::Init signatures have been exhausted, using a substitute!
+[Info   :Il2CppInterop] Registered mono type Il2CppInterop.Runtime.DelegateSupport+Il2CppToMonoDelegateReference in il2cpp domain
+[Info   :   BepInEx] 6 plugins to load
+[Info   :   BepInEx] Loading [UnityExplorer 4.13.6]
+[Message:UnityExplorer] UnityExplorer 4.13.6 initializing...
+[Message:UnityExplorer] [UniverseLib] UniverseLib 1.6.2 initializing...
+[Info   :Il2CppInterop] Registered mono type UniverseLib.UniversalBehaviour in il2cpp domain
+[Info   :Il2CppInterop] Registered mono type UniverseLib.Runtime.Il2Cpp.Il2CppManagedEnumerator in il2cpp domain
+[Message:UnityExplorer] [UniverseLib] Finished UniverseLib initial setup.
+[Info   :Il2CppInterop] Registered mono type UnityExplorer.ExplorerBehaviour in il2cpp domain
+[Message:UnityExplorer] Initialized UnityCrashPrevention for: Canvas.get_renderingDisplaySize
+[Info   :   BepInEx] Loading [MiSide God Mode 1.0.0]
+[Warning:  HarmonyX] AccessTools.GetTypesFromAssembly: assembly Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null => System.Reflection.ReflectionTypeLoadException: Unable to load one or more of the requested types.
+Could not load type 'OptionValue' from assembly 'Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' because the format is invalid.
+   at System.Reflection.RuntimeModule.GetTypes(RuntimeModule module)
+   at System.Reflection.Assembly.GetTypes()
+   at HarmonyLib.AccessTools.GetTypesFromAssembly(Assembly assembly)
+System.TypeLoadException: Could not load type 'OptionValue' from assembly 'Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' because the format is invalid.
+[Info   :MiSide God Mode] [GodMode] 已接管 Location6_MitaKiller.Kill（无敌）
+[Warning:  HarmonyX] AccessTools.GetTypesFromAssembly: assembly Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null => System.Reflection.ReflectionTypeLoadException: Unable to load one or more of the requested types.
+Could not load type 'OptionValue' from assembly 'Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' because the format is invalid.
+   at System.Reflection.RuntimeModule.GetTypes(RuntimeModule module)
+   at System.Reflection.Assembly.GetTypes()
+   at HarmonyLib.AccessTools.GetTypesFromAssembly(Assembly assembly)
+System.TypeLoadException: Could not load type 'OptionValue' from assembly 'Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' because the format is invalid.
+[Info   :MiSide God Mode] [GodMode] 已接管 Location6_MitaKiller.PlayerLose（无敌）
+[Warning:  HarmonyX] AccessTools.GetTypesFromAssembly: assembly Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null => System.Reflection.ReflectionTypeLoadException: Unable to load one or more of the requested types.
+Could not load type 'OptionValue' from assembly 'Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' because the format is invalid.
+   at System.Reflection.RuntimeModule.GetTypes(RuntimeModule module)
+   at System.Reflection.Assembly.GetTypes()
+   at HarmonyLib.AccessTools.GetTypesFromAssembly(Assembly assembly)
+System.TypeLoadException: Could not load type 'OptionValue' from assembly 'Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' because the format is invalid.
+[Info   :MiSide God Mode] [GodMode] 已接管 Location20_RunCorridor.Damage（无敌）
+[Warning:  HarmonyX] AccessTools.GetTypesFromAssembly: assembly Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null => System.Reflection.ReflectionTypeLoadException: Unable to load one or more of the requested types.
+Could not load type 'OptionValue' from assembly 'Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' because the format is invalid.
+   at System.Reflection.RuntimeModule.GetTypes(RuntimeModule module)
+   at System.Reflection.Assembly.GetTypes()
+   at HarmonyLib.AccessTools.GetTypesFromAssembly(Assembly assembly)
+System.TypeLoadException: Could not load type 'OptionValue' from assembly 'Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' because the format is invalid.
+[Info   :MiSide God Mode] [GodMode] 已接管 Location20_RunCorridor.KillPlayerStart（无敌）
+[Warning:  HarmonyX] AccessTools.GetTypesFromAssembly: assembly Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null => System.Reflection.ReflectionTypeLoadException: Unable to load one or more of the requested types.
+Could not load type 'OptionValue' from assembly 'Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' because the format is invalid.
+   at System.Reflection.RuntimeModule.GetTypes(RuntimeModule module)
+   at System.Reflection.Assembly.GetTypes()
+   at HarmonyLib.AccessTools.GetTypesFromAssembly(Assembly assembly)
+System.TypeLoadException: Could not load type 'OptionValue' from assembly 'Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' because the format is invalid.
+[Info   :MiSide God Mode] [GodMode] 已接管 Location7_HammerButton.PlayerDamage（无敌）
+[Warning:  HarmonyX] AccessTools.GetTypesFromAssembly: assembly Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null => System.Reflection.ReflectionTypeLoadException: Unable to load one or more of the requested types.
+Could not load type 'OptionValue' from assembly 'Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' because the format is invalid.
+   at System.Reflection.RuntimeModule.GetTypes(RuntimeModule module)
+   at System.Reflection.Assembly.GetTypes()
+   at HarmonyLib.AccessTools.GetTypesFromAssembly(Assembly assembly)
+System.TypeLoadException: Could not load type 'OptionValue' from assembly 'Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' because the format is invalid.
+[Info   :MiSide God Mode] [GodMode] 已接管 Shooter_Player.Damage（无敌）
+[Warning:  HarmonyX] AccessTools.GetTypesFromAssembly: assembly Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null => System.Reflection.ReflectionTypeLoadException: Unable to load one or more of the requested types.
+Could not load type 'OptionValue' from assembly 'Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' because the format is invalid.
+   at System.Reflection.RuntimeModule.GetTypes(RuntimeModule module)
+   at System.Reflection.Assembly.GetTypes()
+   at HarmonyLib.AccessTools.GetTypesFromAssembly(Assembly assembly)
+System.TypeLoadException: Could not load type 'OptionValue' from assembly 'Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' because the format is invalid.
+[Info   :MiSide God Mode] [GodMode] 已接管 Shooter_Player.Kill（无敌）
+[Warning:  HarmonyX] AccessTools.GetTypesFromAssembly: assembly Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null => System.Reflection.ReflectionTypeLoadException: Unable to load one or more of the requested types.
+Could not load type 'OptionValue' from assembly 'Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' because the format is invalid.
+   at System.Reflection.RuntimeModule.GetTypes(RuntimeModule module)
+   at System.Reflection.Assembly.GetTypes()
+   at HarmonyLib.AccessTools.GetTypesFromAssembly(Assembly assembly)
+System.TypeLoadException: Could not load type 'OptionValue' from assembly 'Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' because the format is invalid.
+[Info   :MiSide God Mode] [GodMode] 已接管 Location6_MitaKiller.StartAttack（和平）
+[Warning:  HarmonyX] AccessTools.GetTypesFromAssembly: assembly Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null => System.Reflection.ReflectionTypeLoadException: Unable to load one or more of the requested types.
+Could not load type 'OptionValue' from assembly 'Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' because the format is invalid.
+   at System.Reflection.RuntimeModule.GetTypes(RuntimeModule module)
+   at System.Reflection.Assembly.GetTypes()
+   at HarmonyLib.AccessTools.GetTypesFromAssembly(Assembly assembly)
+System.TypeLoadException: Could not load type 'OptionValue' from assembly 'Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' because the format is invalid.
+[Info   :MiSide God Mode] [GodMode] 已接管 Location12.CreepyMitaAttack（和平）
+[Warning:  HarmonyX] AccessTools.GetTypesFromAssembly: assembly Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null => System.Reflection.ReflectionTypeLoadException: Unable to load one or more of the requested types.
+Could not load type 'OptionValue' from assembly 'Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' because the format is invalid.
+   at System.Reflection.RuntimeModule.GetTypes(RuntimeModule module)
+   at System.Reflection.Assembly.GetTypes()
+   at HarmonyLib.AccessTools.GetTypesFromAssembly(Assembly assembly)
+System.TypeLoadException: Could not load type 'OptionValue' from assembly 'Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' because the format is invalid.
+[Info   :MiSide God Mode] [GodMode] 已接管 Location12.CreepyMitaStayAttack（和平）
+[Warning:  HarmonyX] AccessTools.GetTypesFromAssembly: assembly Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null => System.Reflection.ReflectionTypeLoadException: Unable to load one or more of the requested types.
+Could not load type 'OptionValue' from assembly 'Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' because the format is invalid.
+   at System.Reflection.RuntimeModule.GetTypes(RuntimeModule module)
+   at System.Reflection.Assembly.GetTypes()
+   at HarmonyLib.AccessTools.GetTypesFromAssembly(Assembly assembly)
+System.TypeLoadException: Could not load type 'OptionValue' from assembly 'Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' because the format is invalid.
+[Info   :MiSide God Mode] [GodMode] 已接管 Location10_ManekenChekpoint.ManekenAttack（和平）
+[Warning:  HarmonyX] AccessTools.GetTypesFromAssembly: assembly Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null => System.Reflection.ReflectionTypeLoadException: Unable to load one or more of the requested types.
+Could not load type 'OptionValue' from assembly 'Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' because the format is invalid.
+   at System.Reflection.RuntimeModule.GetTypes(RuntimeModule module)
+   at System.Reflection.Assembly.GetTypes()
+   at HarmonyLib.AccessTools.GetTypesFromAssembly(Assembly assembly)
+System.TypeLoadException: Could not load type 'OptionValue' from assembly 'Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' because the format is invalid.
+[Info   :MiSide God Mode] [GodMode] 已接管 Location11_LiftEnemy.Attack（和平）
+[Warning:  HarmonyX] AccessTools.GetTypesFromAssembly: assembly Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null => System.Reflection.ReflectionTypeLoadException: Unable to load one or more of the requested types.
+Could not load type 'OptionValue' from assembly 'Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' because the format is invalid.
+   at System.Reflection.RuntimeModule.GetTypes(RuntimeModule module)
+   at System.Reflection.Assembly.GetTypes()
+   at HarmonyLib.AccessTools.GetTypesFromAssembly(Assembly assembly)
+System.TypeLoadException: Could not load type 'OptionValue' from assembly 'Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' because the format is invalid.
+[Warning:Il2CppInterop] Failed to init IL2CPP patch backend for float WorldPlayer::get_speed(), using normal patch handlers: Method float WorldPlayer::get_speed() is a field accessor, it can't be patched.
+[Info   :MiSide God Mode] [GodMode] 移速倍率已挂到 WorldPlayer.speed（当前 1.6x）
+[Info   :MiSide God Mode] [GodMode] MiSide God Mode v1.0.0 已加载：13 个补丁生效，0 个目标跳过（不影响游戏）
+[Info   :MiSide God Mode] [GodMode] 开关：GodMode=True Pacify=True Speed=1.6x
+[Info   :   BepInEx] Loading [MiSide True Ending - Save All Mitas 0.4.0]
+[Info   :MiSide True Ending - Save All Mitas] [MitaTE] MiSide True Ending - Save All Mitas v0.4.0 已加载
+[Info   :MiSide True Ending - Save All Mitas] [MitaTE] 当前拯救进度: Tiny=False, Mila=False, Cappie=False, Kind=False, Disk=False, Patch=False => Perfect=False, True=False
+[Info   :Il2CppInterop] Registered mono type MitaTrueEnding.ReconBehaviour in il2cpp domain
+[Info   :MiSide True Ending - Save All Mitas] [MitaTE-Recon] 已读回历史快照 9 个场景，继续累积。
+[Info   :MiSide True Ending - Save All Mitas] [MitaTE-Recon] === Recon v2 启动：场景切换自动快照已开启（1.5s/8s 两次抓取，同场景覆盖、异场景保留）===
+[Info   :MiSide True Ending - Save All Mitas] [MitaTE-Recon] === 快照文件: D:\steam\steamapps\common\MiSide\BepInEx\config\MitaTE-scene-snapshots.log · 时间序日志: D:\steam\steamapps\common\MiSide\BepInEx\config\MitaTE-recon.log · F9=立即补抓 ===
+[Info   :MiSide True Ending - Save All Mitas] [MitaTE] 侦察组件已启用：场景切换自动记录+快照（同场景覆盖/异场景保留），文件在 BepInEx/config/MitaTE-recon.log 与 MitaTE-scene-snapshots.log，F9 可手动补抓
+[Info   :MiSide True Ending - Save All Mitas] [MitaTE] 过场雷达已启用：Playable_Animation.Play/PlayAsset 触发即记录 Timeline 资源名到 MitaTE-recon.log
+[Info   :MiSide True Ending - Save All Mitas] [MitaTE] 剧情拦截仍未启用：当前仅过场雷达在记录资源名（等 recon 日志锁定处决过场）
+[Info   :   BepInEx] Loading [Better Movement 1.0.0]
+[Info   :Better Movement] Plugin juzlus.miside.bettermovement is loaded!
+[Message:Better Movement] Infinity Jumps : False, Jump Force : 50
+[Message:Better Movement] Infinity Jumps Key -> F8
+[Info   :   BepInEx] Loading [PhotoMode Always Active 1.1.1]
+[Info   :PhotoMode Always Active] Plugin juzlus.miside.photomodeactive is loaded!
+[Message:PhotoMode Always Active] Fast Photo Mode -> V
+[Info   :   BepInEx] Loading [MS_CustomModels 4.0.4]
+[Info   :MS_CustomModels] Plugin MS_CustomModels is loaded!
+[Info   :Il2CppInterop] Registered mono type MS_CustomModels.Behaviour in il2cpp domain
+[Info   :Il2CppInterop] Registered mono type MS_CustomModels.SceneListener in il2cpp domain
+[Info   :MS_CustomModels] Initializing UniverseLib
+[Info   :MS_CustomModels] Dangerous patch: ok
+[Message:   BepInEx] Chainloader startup complete
+[Info   :MiSide True Ending - Save All Mitas] [MitaTE-Recon] 场景加载: "SceneAihasto"  path="Assets/Scenes/Menu/SceneAihasto.unity"  roots=1  mode=2
+[Info   :MiSide True Ending - Save All Mitas] [MitaTE-Recon] 过场触发[Play] asset="LogoPresent" scene="SceneAihasto" go="Scene"
+[Info   :MiSide True Ending - Save All Mitas] [MitaTE-Recon] 自动快照: "SceneAihasto" roots=1（快照文件已更新，共 9 个场景）
+[Message:UnityExplorer] [UniverseLib] Loaded Unhollowed modules in 3.7350001 seconds.
+[Message:UnityExplorer] [UniverseLib] Setup deobfuscation cache in 0.051000003 seconds.
+[Message:UnityExplorer] [UniverseLib] Initialized Legacy Input support
+[Info   :Il2CppInterop] Registered mono type UniverseLib.AssetBundle in il2cpp domain
+[Message:UnityExplorer] [UniverseLib] Loaded modern bundle for Unity 2021.3.35f1
+[Warning:UnityExplorer] [UniverseLib] Could not find any iCall with the signature 'UnityEngine.AssetBundle::LoadAsset_Internal_Injected'!
+[Warning:UnityExplorer] [UniverseLib] Could not find any iCall with the signature 'UnityEngine.AssetBundle::LoadAsset_Internal_Injected'!
+[Warning:UnityExplorer] [UniverseLib] Could not find any iCall with the signature 'UnityEngine.AssetBundle::LoadAsset_Internal_Injected'!
+[Message:UnityExplorer] [UniverseLib] UniverseLib 1.6.2 initialized.
+[Message:UnityExplorer] Creating UI...
+[Message:UnityExplorer] UnityExplorer 4.13.6 (IL2CPP) initialized.
+[Info   :MiSide True Ending - Save All Mitas] [MitaTE-Recon] 自动快照: "SceneAihasto" roots=1（快照文件已更新，共 9 个场景）
+[Info   :MiSide True Ending - Save All Mitas] [MitaTE-Recon] 场景加载: "SceneLoading"  path="Assets/Scenes/Menu/SceneLoading.unity"  roots=2  mode=Single
+[Info   :MiSide True Ending - Save All Mitas] [MitaTE-Recon] 自动快照: "SceneLoading" roots=2（快照文件已更新，共 9 个场景）
+[Info   :MiSide True Ending - Save All Mitas] [MitaTE-Recon] 自动快照: "SceneLoading" roots=2（快照文件已更新，共 9 个场景）
+[Info   :MiSide True Ending - Save All Mitas] [MitaTE-Recon] 场景加载: "SceneMenu"  path="Assets/Scenes/Menu/SceneMenu.unity"  roots=1  mode=Single
+[Info   :Il2CppInterop] Registered mono type MS_CustomModels.AssetBundle in il2cpp domain
+[Info   :MS_CustomModels] Swapping shaders
+[Info   :MS_CustomModels] Mapped 173 bones
+[Info   :MS_CustomModels] No spring bone data found
+[Info   :MS_CustomModels] Didn't find spring bone data in bundle
+[Info   :MS_CustomModels] Model without voice controller
+[Info   :MiSide True Ending - Save All Mitas] [MitaTE-Recon] 自动快照: "SceneMenu" roots=1（快照文件已更新，共 9 个场景）
+[Info   :MiSide True Ending - Save All Mitas] [MitaTE-Recon] 自动快照: "SceneMenu" roots=1（快照文件已更新，共 9 个场景）
+[Info   :MiSide True Ending - Save All Mitas] [MitaTE-Recon] 场景加载: "SceneLoading"  path="Assets/Scenes/Menu/SceneLoading.unity"  roots=2  mode=Single
+[Info   :MiSide True Ending - Save All Mitas] [MitaTE-Recon] 场景加载: "Scene 6 - BasementFirst"  path="Assets/Scenes/Game/Scene 6 - BasementFirst.unity"  roots=1  mode=Single
+[Info   :MS_CustomModels] Swapping shaders
+[Info   :MS_CustomModels] Found outline target: InteractiveMita
+[Info   :MS_CustomModels] Found outline target: InteractiveMita Key
+[Info   :MS_CustomModels] Mapped 151 bones
+[Info   :MS_CustomModels] No spring bone data found
+[Info   :MS_CustomModels] Didn't find spring bone data in bundle
+[Info   :MS_CustomModels] Got voice controller
+[Warning:MS_CustomModels] Unknown mita: Mita Future
+[Info   :MiSide True Ending - Save All Mitas] [MitaTE-Recon] 自动快照: "Scene 6 - BasementFirst" roots=1（快照文件已更新，共 9 个场景）
+[Info   :MiSide True Ending - Save All Mitas] [MitaTE-Recon] 自动快照: "Scene 6 - BasementFirst" roots=1（快照文件已更新，共 9 个场景）
+[Info   :MS_CustomModels] Swapping shaders
+[Info   :MS_CustomModels] Mapped 173 bones
+[Info   :MS_CustomModels] No spring bone data found
+[Info   :MS_CustomModels] Didn't find spring bone data in bundle
+[Info   :MS_CustomModels] Got voice controller
+[Warning:MS_CustomModels] Unknown mita: Mita
+[Info   :MS_CustomModels] Swapping shaders
+[Info   :MS_CustomModels] Mapped 173 bones
+[Info   :MS_CustomModels] No spring bone data found
+[Info   :MS_CustomModels] Didn't find spring bone data in bundle
+[Info   :MS_CustomModels] Got voice controller
+[Warning:MS_CustomModels] Unknown mita: Mita
+[Info   :MiSide God Mode] [GodMode] 已拦下【和平】Location6_MitaKiller.StartAttack —— 原本这里要出事
+[Info   :MiSide God Mode] [GodMode] 已拦下【无敌】Location6_MitaKiller.PlayerLose —— 原本这里要出事
+[Info   :MiSide God Mode] [GodMode] 已拦下【无敌】Location6_MitaKiller.PlayerLose —— 原本这里要出事
+[Info   :MiSide God Mode] [GodMode] 已拦下【无敌】Location6_MitaKiller.PlayerLose —— 原本这里要出事
+[Info   :MiSide God Mode] [GodMode] 已拦下【无敌】Location6_MitaKiller.Kill —— 原本这里要出事
+[Info   :MiSide God Mode] [GodMode] 已拦下【无敌】Location6_MitaKiller.PlayerLose —— 原本这里要出事
+[Info   :MiSide God Mode] [GodMode] 已拦下【无敌】Location6_MitaKiller.PlayerLose —— 原本这里要出事
+[Info   :MiSide God Mode] [GodMode] 已拦下【无敌】Location6_MitaKiller.PlayerLose —— 原本这里要出事
+[Info   :MiSide God Mode] [GodMode] 已拦下【无敌】Location6_MitaKiller.PlayerLose —— 原本这里要出事
+[Info   :MiSide God Mode] [GodMode] 已拦下【无敌】Location6_MitaKiller.Kill —— 原本这里要出事
+[Info   :MiSide God Mode] [GodMode] 已拦下【无敌】Location6_MitaKiller.PlayerLose —— 原本这里要出事
+[Info   :MiSide True Ending - Save All Mitas] [MitaTE-Recon] 场景加载: "Scene 7 - Backrooms"  path="Assets/Scenes/Game/Scene 7 - Backrooms.unity"  roots=1  mode=Additive

@@ -1,0 +1,45 @@
+[Message: Preloader] BepInEx 6.0.0-be.697 - MiSideFull
+[Message: Preloader] Built from commit 53625800b86f6c68751445248260edf0b27a71c2
+[Info   :   BepInEx] System platform: Windows 10 64-bit
+[Info   :   BepInEx] Process bitness: 64-bit (x64)
+[Info   :   BepInEx] Running under Unity 2021.3.35f1
+[Info   :   BepInEx] Runtime version: 6.0.7
+[Info   :   BepInEx] Runtime information: .NET 6.0.7
+[Info   : Preloader] 0 patcher plugins loaded
+[Info   : Preloader] 0 assemblies discovered
+[Message:AssemblyPatcher] Executing 0 patch(es)
+[Message:   BepInEx] Chainloader initialized
+[Warning:Il2CppInterop] Class::Init signatures have been exhausted, using a substitute!
+[Info   :Il2CppInterop] Registered mono type Il2CppInterop.Runtime.DelegateSupport+Il2CppToMonoDelegateReference in il2cpp domain
+[Info   :   BepInEx] 4 plugins to load
+[Info   :   BepInEx] Loading [MiSide True Ending - Save All Mitas 0.2.1]
+[Info   :MiSide True Ending - Save All Mitas] [MitaTE] MiSide True Ending - Save All Mitas v0.2.1 已加载
+[Info   :MiSide True Ending - Save All Mitas] [MitaTE] 当前拯救进度: Tiny=False, Mila=False, Cappie=False, Kind=False, Disk=False, Patch=False => TrueEnding=False
+[Info   :Il2CppInterop] Registered mono type MitaTrueEnding.ReconBehaviour in il2cpp domain
+[Info   :MiSide True Ending - Save All Mitas] [MitaTE-Recon] === Recon 组件启动：场景切换记录已开启；游戏内按 F9 打印当前场景根对象 ===
+[Info   :MiSide True Ending - Save All Mitas] [MitaTE] 侦察组件已启用：场景切换记录到 BepInEx/config/MitaTE-recon.log，游戏内按 F9 打印当前场景根对象
+[Info   :MiSide True Ending - Save All Mitas] [MitaTE] 未启用任何剧情拦截补丁（等待阶段 0 侦察结果）
+[Info   :   BepInEx] Loading [Better Movement 1.0.0]
+[Info   :Better Movement] Plugin juzlus.miside.bettermovement is loaded!
+[Message:Better Movement] Infinity Jumps : False, Jump Force : 50
+[Message:Better Movement] Infinity Jumps Key -> F8
+[Info   :   BepInEx] Loading [PhotoMode Always Active 1.1.1]
+[Info   :PhotoMode Always Active] Plugin juzlus.miside.photomodeactive is loaded!
+[Message:PhotoMode Always Active] Fast Photo Mode -> V
+[Info   :   BepInEx] Loading [MS_CustomModels 4.0.4]
+[Info   :MS_CustomModels] Plugin MS_CustomModels is loaded!
+[Info   :Il2CppInterop] Registered mono type MS_CustomModels.Behaviour in il2cpp domain
+[Info   :Il2CppInterop] Registered mono type MS_CustomModels.SceneListener in il2cpp domain
+[Info   :MS_CustomModels] Initializing UniverseLib
+[Info   :Il2CppInterop] Registered mono type UniverseLib.UniversalBehaviour in il2cpp domain
+[Info   :Il2CppInterop] Registered mono type UniverseLib.Runtime.Il2Cpp.Il2CppManagedEnumerator in il2cpp domain
+[Info   :MS_CustomModels] Dangerous patch: ok
+[Message:   BepInEx] Chainloader startup complete
+[Info   :MiSide True Ending - Save All Mitas] [MitaTE-Recon] 场景加载: "SceneAihasto"  path="Assets/Scenes/Menu/SceneAihasto.unity"  roots=1
+[Info   :Il2CppInterop] Registered mono type UniverseLib.AssetBundle in il2cpp domain
+[Info   :MiSide True Ending - Save All Mitas] [MitaTE-Recon] 场景加载: "SceneLoading"  path="Assets/Scenes/Menu/SceneLoading.unity"  roots=2
+[Info   :MiSide True Ending - Save All Mitas] [MitaTE-Recon] 场景加载: "SceneMenu"  path="Assets/Scenes/Menu/SceneMenu.unity"  roots=1
+[Info   :MiSide True Ending - Save All Mitas] [MitaTE-Recon] 场景加载: "SceneLoading"  path="Assets/Scenes/Menu/SceneLoading.unity"  roots=2
+[Info   :MiSide True Ending - Save All Mitas] [MitaTE-Recon] 场景加载: "Scene 1 - RealRoom"  path="Assets/Scenes/Game/Scene 1 - RealRoom.unity"  roots=2
+[Info   :Better Movement] Infinity jumps changed : False -> True
+[Info   :Better Movement] Infinity jumps changed : True -> False

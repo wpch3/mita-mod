@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <AssemblyName>MitaGodMode</AssemblyName>
+    <RootNamespace>MitaGodMode</RootNamespace>
+    <Version>1.0.0</Version>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <Description>MiSide 作弊模组「无敌与和平」（BepInEx 6 / IL2CPP）——不死 + 怪物不主动攻击 + 移速倍率</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- BepInEx 6 IL2CPP：来自 nuget.bepinex.dev（见仓库根目录 NuGet.config） -->
+    <PackageReference Include="BepInEx.Unity.IL2CPP" Version="6.0.0-be.*" />
+    <!-- HarmonyX：仅编译期引用；运行时由 BepInEx 自带的 0Harmony.dll 提供，不要把输出的 0Harmony.dll 拷进 plugins -->
+    <PackageReference Include="HarmonyX" Version="2.*" PrivateAssets="all" />
+  </ItemGroup>
+
+  <!-- 说明：本模组全部通过字符串反射定位游戏方法（AccessTools.TypeByName），
+       不直接引用 interop 的任何游戏类型 —— 因此不依赖 lib/interop，
+       游戏小更新后比强类型补丁更耐活；找不到的目标会自动跳过并写日志 -->
+
+</Project>

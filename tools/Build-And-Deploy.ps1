@@ -69,7 +69,9 @@ if ([string]::IsNullOrWhiteSpace($MiSideDir)) {
     $Plugins = Join-Path $MiSideDir "BepInEx/plugins"
     New-Item -ItemType Directory -Force $Plugins | Out-Null
     Copy-Item $DllPath $Plugins -Force
-    Write-Host "[3/3] 已部署到 $Plugins" -ForegroundColor Green
+    $GodDllPath = Join-Path $Root "src/MitaGodMode/bin/$Configuration/net6.0/MitaGodMode.dll"
+    if (Test-Path $GodDllPath) { Copy-Item $GodDllPath $Plugins -Force }
+    Write-Host "[3/3] 已部署到 $Plugins（MitaTrueEnding.dll + MitaGodMode.dll）" -ForegroundColor Green
 }
 
-Write-Host "完成。启动游戏后，在 <游戏目录>\BepInEx\LogOutput.log 里应能看到 [MitaTE] 日志。" -ForegroundColor Green
+Write-Host "完成。启动游戏后，在 <游戏目录>\BepInEx\LogOutput.log 里应能看到 [MitaTE] 与 [GodMode] 日志。" -ForegroundColor Green

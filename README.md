@@ -196,17 +196,31 @@ dotnet build -c Release
 ## 八、仓库结构
 
 ```
-├── README.md                        # 本方案
+├── README.md                        # 本方案（含双结局设计 v3.1）
 ├── MitaMod.sln                      # 解决方案：仓库根目录可直接 dotnet build
 ├── NuGet.config                     # 添加 nuget.bepinex.dev 源
-├── docs/recon-checklist.md          # 阶段 0 逆向侦察清单（含待填对照表）
-├── src/MitaTrueEnding/              # BepInEx 6 IL2CPP 插件工程
+├── docs/
+│   ├── recon-checklist.md           # 阶段 0 逆向侦察清单（含待填对照表）
+│   ├── vanilla-plot-baseline.md     # 原版剧情/三结局基线（增量设计的地板）
+│   ├── unityexplorer-fix.md         # UnityExplorer 安装排障（两波坑实录）
+│   ├── godmode.md                   # 作弊模组使用说明
+│   └── recon-reports/               # ReconDump 静态报告 + 历史日志归档
+├── src/MitaTrueEnding/              # 真结局插件工程
 │   ├── MitaTrueEnding.csproj
-│   ├── Plugin.cs                    # 插件入口
-│   ├── RescueState.cs               # 拯救进度（独立 JSON 存档）
-│   └── Templates/                   # 补丁/演出模板（.txt，不参与编译，等阶段 0 落实）
+│   ├── Plugin.cs                    # 插件入口（含过场雷达挂载）
+│   ├── RescueState.cs               # 拯救进度（独立 JSON 存档，双结局判定）
+│   ├── ReconBehaviour.cs            # 场景侦察组件（全自动快照）
+│   ├── Patches/CutsceneRadar.cs     # 过场雷达补丁
+│   └── Templates/                   # 补丁/演出模板（.txt，不参与编译）
+├── src/MitaGodMode/                 # 作弊插件工程（无敌+和平+移速，独立于真结局）
+│   ├── MitaGodMode.csproj
+│   └── Plugin.cs                    # 纯反射补丁，失败自动跳过
 ├── lib/interop/                     # 游戏 interop 程序集（不入库，本机生成，见目录内 README）
-└── tools/Build-And-Deploy.ps1       # 一键编译 + 部署到游戏 BepInEx/plugins（Windows）
+└── tools/
+    ├── Build-And-Deploy.ps1         # 一键编译 + 部署两个插件到游戏（Windows）
+    ├── Test-PluginCompat.ps1        # 插件兼容性/UniverseLib 撞车自检与修复
+    ├── Recon-Scan.ps1               # 静态扫描入口
+    └── ReconDump/                   # 静态扫描器（MetadataLoadContext 只读解析）
 ```
 
 ## 九、参考链接

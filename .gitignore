@@ -18,3 +18,6 @@ lib/interop/*
 *.suo
 Thumbs.db
 .DS_Store
+
+# 根目录防止误传 dll（第三方二进制不入库）
+/*.dll

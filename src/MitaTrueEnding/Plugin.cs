@@ -17,7 +17,7 @@ public class Plugin : BasePlugin
 {
     public const string GUID = "com.wpch3.miside.trueending";
     public const string NAME = "MiSide True Ending - Save All Mitas";
-    public const string VERSION = "0.3.0";
+    public const string VERSION = "0.4.0";
 
     /// <summary>全局日志（输出到 BepInEx/LogOutput.log）。</summary>
     internal static new ManualLogSource Log { get; private set; } = null!;
@@ -60,6 +60,19 @@ public class Plugin : BasePlugin
             Log.LogWarning($"[MitaTE] 侦察组件启动失败（不影响主功能）: {e.Message}");
         }
 
-        Log.LogInfo("[MitaTE] 未启用任何剧情拦截补丁（等待阶段 0 侦察结果）");
+        // --- 阶段 1 前置：过场雷达（纯侦察，不拦截任何东西；见 Patches/CutsceneRadar.cs） ---
+        try
+        {
+            Patches.CutsceneRadar.Configure(Config);
+            _harmony.PatchAll(typeof(Patches.PlayableAnimationPlayAssetPatch));
+            _harmony.PatchAll(typeof(Patches.PlayableAnimationPlayPatch));
+            Log.LogInfo("[MitaTE] 过场雷达已启用：Playable_Animation.Play/PlayAsset 触发即记录 Timeline 资源名到 MitaTE-recon.log");
+        }
+        catch (Exception e)
+        {
+            Log.LogWarning($"[MitaTE] 过场雷达启动失败（不影响侦察组件等其他功能）: {e.Message}");
+        }
+
+        Log.LogInfo("[MitaTE] 剧情拦截仍未启用：当前仅过场雷达在记录资源名（等 recon 日志锁定处决过场）");
     }
 }

@@ -55,7 +55,7 @@
 |---|---|---|
 | Mod 框架 | **BepInEx 6**（IL2CPP / CoreCLR bleeding edge） | MiSide mod 社区事实标准，Nexus 上所有代码类 mod 均基于它 |
 | 运行时补丁 | HarmonyX | BepInEx 自带 0Harmony.dll，无需玩家另行安装 |
-| 运行时侦察 | **UnityExplorer**（BepInEx IL2CPP CoreCLR 版） | 场景树浏览、组件检查、方法试调；给 MiSide 用必须选 IL2CPP CoreCLR 版 |
+| 运行时侦察 | **UnityExplorer**（yukieiji fork，文件名必须带 `.Unity.`：`UnityExplorer.BepInEx.Unity.IL2CPP.CoreCLR.zip`） | 场景树浏览、组件检查、方法试调；be.577+ 下不带 `.Unity.` 的旧版会被静默跳过（见 `docs/unityexplorer-fix.md`） |
 | 类名/方法名检索 | dnSpy 打开 `BepInEx/interop/Assembly-CSharp.dll` | ⚠️ **只看得到签名，看不到方法体** |
 | 逻辑逆向 | **Il2CppDumper + Ghidra/IDA**，或 Cpp2IL | 找剧情调用链、存档结构、结局判定 |
 | 资源提取 | AssetRipper | 动画剪辑清单、prefab、台词表 |

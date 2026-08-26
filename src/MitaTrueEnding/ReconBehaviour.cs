@@ -189,7 +189,7 @@ public class ReconBehaviour : MonoBehaviour
         return e < 0 ? "" : text.Substring(s, e - s);
     }
 
-    private static void LogLine(string msg)
+    internal static void LogLine(string msg)   // internal：Patches/CutsceneRadar 也用它写 MitaTE-recon.log
     {
         Plugin.Log.LogInfo($"[MitaTE-Recon] {msg}");
         try

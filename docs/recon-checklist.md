@@ -11,7 +11,7 @@
 
 - [x] BepInEx 6（IL2CPP / CoreCLR bleeding edge）装进游戏根目录，运行一次，生成 `BepInEx/interop/`（2026-08-25 完成，be.785，确认 Unity 2021.3.35f1 + .NET 6）
 - [x] interop DLL 拷到 `lib/interop/`，`dotnet build` 通过，插件日志出现 `[MitaTE]`（v0.1.0 验证）
-- [ ] UnityExplorer（发布页选 **BepInEx IL2CPP CoreCLR** 版：`UnityExplorer.BepInEx.IL2CPP.CoreCLR.zip`）dll 放进 `BepInEx/plugins/`，进游戏按 **F7** 打开
+- [ ] UnityExplorer：去 **yukieiji fork** 发布页选文件名带 **`.Unity.`** 的版本：`UnityExplorer.BepInEx.Unity.IL2CPP.CoreCLR.zip`（⚠️ BepInEx be.577+ 把插件基类程序集改名 `BepInEx.Unity.IL2CPP`，不带 `.Unity.` 的旧 zip 会被**静默跳过**——2026-08-26 已用 strings 实锤验证，见 `docs/unityexplorer-fix.md`）dll 放进 `BepInEx/plugins/`，进游戏按 **F7** 打开
 - [ ] （可选）dnSpy 打开 interop 的 `Assembly-CSharp.dll` —— 常规搜索已被 0-1.6 的 ReconDump 替代，dnSpy 只留作深挖单个类时用；Il2CppDumper + Ghidra 推后到需要看方法逻辑时再用
 - [x] hello patch/部署链路验证（由 v0.2.0 内置 Recon 组件接管，见 0-1.5）
 
@@ -28,6 +28,10 @@
   - 两次抓取是为了等物体/UI 延迟生成（8s 那张覆盖 1.5s 那张）
   - 跨游戏会话合并：重启游戏会读回旧快照继续累积
 - **F9**（可选兜底）：立即对当前全部已加载场景补抓一张快照
+- **过场雷达**（v0.4.0 起，`Patches/CutsceneRadar.cs`）：游戏里每触发一段剧情演出
+  （`Playable_Animation.Play` / `PlayAsset`），自动把 **Timeline 资源名 + 场景名 + 挂载物体名**
+  追加进 `MitaTE-recon.log` —— 这是锁定「处决过场资源名」（§0-3 表格第 2 列）的直接数据来源。
+  纯侦察不拦截；通关后跟着日志一起交给 Agent 即可。
 
 场景名格式已确认：`Scene <章节号> - <代号>`（例：`Scene 3 - WeTogether`）——
 通关一遍即可拿全"章节号 ↔ 场景名"对照。

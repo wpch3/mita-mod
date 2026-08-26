@@ -22,9 +22,11 @@ if (!File.Exists(target))
     return 2;
 }
 
-// Il2Cpp interop 壳程序集以 Il2Cppmscorlib 为核心库，全部依赖都在 interop 目录内
-string[] dllPaths = Directory.GetFiles(interopDir, "*.dll");
-using var mlc = new MetadataLoadContext(new PathAssemblyResolver(dllPaths), "Il2Cppmscorlib");
+// 依赖 = interop 目录全部 dll + 当前运行时的真实 corlib。
+// Il2Cppmscorlib 是壳，可能缺 System.IntPtr 等基元类型定义，不补会在解码字段签名时抛 TypeLoadException。
+var dllPaths = Directory.GetFiles(interopDir, "*.dll").ToList();
+dllPaths.Add(typeof(object).Assembly.Location);
+using var mlc = new MetadataLoadContext(new PathAssemblyResolver(dllPaths));
 Assembly asm = mlc.LoadFromAssemblyPath(target);
 
 Type[] types;
@@ -89,11 +91,11 @@ foreach (var (group, keys) in typeGroups)
     {
         sb.AppendLine($"[TYPE] {Safe(() => t.FullName ?? t.Name, "??")}");
         foreach (var f in SafeFields(t).Take(30))
-            sb.AppendLine($"    field {(f.IsPublic ? "+" : "-")} {Simple(f.FieldType)} {f.Name}");
+            sb.AppendLine($"    field {(f.IsPublic ? "+" : "-")} {Safe(() => Simple(f.FieldType), "?")} {f.Name}");
         foreach (var p in SafeProps(t).Take(30))
-            sb.AppendLine($"    prop  {(p.GetMethod?.IsPublic == true ? "+" : "-")} {(p.CanRead ? Simple(p.PropertyType) : "?")} {p.Name}");
+            sb.AppendLine($"    prop  {(p.GetMethod?.IsPublic == true ? "+" : "-")} {(p.CanRead ? Safe(() => Simple(p.PropertyType), "?") : "?")} {p.Name}");
         foreach (var m in SafeMethods(t).Where(m => !m.IsSpecialName).Take(MaxMethodsPerType))
-            sb.AppendLine($"    meth  {(m.IsPublic ? "+" : "-")} {Simple(m.ReturnType)} {m.Name}({Params(m)})");
+            sb.AppendLine($"    meth  {(m.IsPublic ? "+" : "-")} {Safe(() => Simple(m.ReturnType), "?")} {m.Name}({Params(m)})");
         sb.AppendLine();
     }
     if (hits.Count > MaxTypesPerGroup)

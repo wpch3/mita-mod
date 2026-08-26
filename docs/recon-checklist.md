@@ -3,6 +3,8 @@
 > 输入：MiSide 游戏 + BepInEx 6 IL2CPP + UnityExplorer（BepInEx IL2CPP CoreCLR 版）+ dnSpy + Il2CppDumper。
 > 产出（本阶段唯一交付物）：**下方对照表全部填实**，并有一个能在游戏日志里打印的 hello patch。
 > ⚠️ 不搞完本阶段不要写剧情补丁 —— v1 Gemini 方案里的类名全是占位符。
+> 📖 剧情侧基线：原版剧情/三结局/角色遭遇已固化在 `docs/vanilla-plot-baseline.md`（社区资料+置信度标记），
+> 写任何拦截/台词前必读；doc 中每条 🔴 待办都靠本清单的动态侦察数据实锤。
 >
 > 📌 进度：**静态侧已基本完成**（0-1.6 ReconDump 报告已入库 `docs/recon-reports/`，结论见文末 §0-7）。
 > 剩余：动态侧场景名对照（边玩边跑 0-1.5 收集的 `MitaTE-recon.log`）。

@@ -12,15 +12,17 @@ namespace MitaTrueEnding;
 /// 设计决策（见 README v2 §4.1）：
 /// - 不写回原游戏存档，避免污染存档/坏档、避免与游戏更新冲突；
 /// - 独立 JSON 存到 BepInEx/config 目录，由剧情拦截点在运行时读写；
-/// - 拦截判定一律以 <see cref="TrueEndingUnlocked"/> 为准，未满足时游戏完全走原版流程。
+/// - 拦截判定一律以 <see cref="PerfectEndingUnlocked"/> / <see cref="TrueEndingUnlocked"/> 为准，未满足时游戏完全走原版流程。
+/// - 双结局（用户 2026-08-26 定稿）：完美结局=全员存活（AllRescued）；
+///   真结局=全员存活+伏笔道具（TrueEndingUnlocked），米塔们随主角回现实生活。
 /// </summary>
 public sealed class RescueState
 {
-    // ---------- 伏笔道具 ----------
-    /// <summary>二楼房间隐藏道具：未损坏的核心数据盘。</summary>
+    // ---------- 伏笔道具（双结局设计 v3：不卡个别拯救，只开启「真结局·现实线」的钥匙） ----------
+    /// <summary>二楼房间隐藏道具：未损坏的核心数据盘（把米塔们的数据带出游戏世界的载体）。</summary>
     public bool HasCoreDataDisk { get; set; }
 
-    /// <summary>掌机隐藏关卡通关奖励：修复补丁。</summary>
+    /// <summary>掌机隐藏关卡通关奖励：修复补丁（让米塔们能稳定存在于现实的修复程序）。</summary>
     public bool HasRepairPatch { get; set; }
 
     // ---------- 各章节拯救结果（拦截点按 README §2 表格拆分） ----------
@@ -40,7 +42,11 @@ public sealed class RescueState
     [JsonIgnore]
     public bool AllRescued => RescuedTinyMita && RescuedMila && RescuedCappie && RescuedKindMita;
 
-    /// <summary>真结局触发条件：全员获救 + 全部伏笔道具。</summary>
+    /// <summary>完美结局「全员存活」：四位米塔全部获救（米塔们留在游戏世界安稳生活）。</summary>
+    [JsonIgnore]
+    public bool PerfectEndingUnlocked => AllRescued;
+
+    /// <summary>真结局「现实一起生活」：完美结局 + 全部伏笔道具（核心数据盘+修复补丁 = 通往现实的钥匙）。</summary>
     [JsonIgnore]
     public bool TrueEndingUnlocked => AllRescued && HasCoreDataDisk && HasRepairPatch;
 
@@ -96,5 +102,5 @@ public sealed class RescueState
 
     public override string ToString() =>
         $"Tiny={RescuedTinyMita}, Mila={RescuedMila}, Cappie={RescuedCappie}, Kind={RescuedKindMita}, " +
-        $"Disk={HasCoreDataDisk}, Patch={HasRepairPatch} => TrueEnding={TrueEndingUnlocked}";
+        $"Disk={HasCoreDataDisk}, Patch={HasRepairPatch} => Perfect={PerfectEndingUnlocked}, True={TrueEndingUnlocked}";
 }

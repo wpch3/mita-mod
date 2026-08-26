@@ -33,8 +33,11 @@
 // {
 //     public static bool Prefix(KindMitaCutsceneController __instance)
 //     {
-//         if (!Plugin.Rescue.TrueEndingUnlocked)
-//             return true;                     // 伏笔未齐：放行原版剧情，零痕迹
+//         // v3 双结局（见 README §二）：善良米塔拦截的条件 = 前三位已获救。
+//         // 伏笔道具（核心数据盘/修复补丁）不卡拯救，只决定终局是走完美线还是真·现实线，
+//         // 因此在结局分歧点（如 Core_Entry）才检查 PerfectEndingUnlocked / TrueEndingUnlocked。
+//         if (!(Plugin.Rescue.RescuedTinyMita && Plugin.Rescue.RescuedMila && Plugin.Rescue.RescuedCappie))
+//             return true;                     // 拯救链已断：放行原版剧情，零痕迹
 //
 //         Plugin.Log.LogInfo("[MitaTE] 拦截善良米塔遇害事件，启动拯救流程");
 //         Plugin.Rescue.MarkRescued("kind");

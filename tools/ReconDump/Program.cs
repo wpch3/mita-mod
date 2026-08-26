@@ -1,4 +1,5 @@
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Text;
 
 // ============================================================
@@ -22,11 +23,16 @@ if (!File.Exists(target))
     return 2;
 }
 
-// 依赖 = interop 目录全部 dll + 当前运行时的真实 corlib。
-// Il2Cppmscorlib 是壳，可能缺 System.IntPtr 等基元类型定义，不补会在解码字段签名时抛 TypeLoadException。
-var dllPaths = Directory.GetFiles(interopDir, "*.dll").ToList();
-dllPaths.Add(typeof(object).Assembly.Location);
-using var mlc = new MetadataLoadContext(new PathAssemblyResolver(dllPaths));
+// 依赖解析 = interop 目录（游戏壳，同名优先）+ .NET 运行时目录（提供真正的 corlib/基元类型：
+// Il2Cppmscorlib 壳里缺 System.IntPtr 等定义，上次单文件喂法在你的环境没生效，
+// 这里改用 RuntimeEnvironment.GetRuntimeDirectory() 全量喂入——这是官方文档的标准姿势。
+// 必须按简单名去重：PathAssemblyResolver 不允许同名程序集出现两次。
+var byName = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
+foreach (string p in Directory.GetFiles(interopDir, "*.dll"))
+    byName[Path.GetFileNameWithoutExtension(p)] = p;
+foreach (string p in Directory.GetFiles(RuntimeEnvironment.GetRuntimeDirectory(), "*.dll"))
+    byName.TryAdd(Path.GetFileNameWithoutExtension(p), p);
+using var mlc = new MetadataLoadContext(new PathAssemblyResolver(byName.Values), "System.Private.CoreLib");
 Assembly asm = mlc.LoadFromAssemblyPath(target);
 
 Type[] types;

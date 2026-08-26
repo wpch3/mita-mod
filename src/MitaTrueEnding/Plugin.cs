@@ -17,7 +17,7 @@ public class Plugin : BasePlugin
 {
     public const string GUID = "com.wpch3.miside.trueending";
     public const string NAME = "MiSide True Ending - Save All Mitas";
-    public const string VERSION = "0.2.1";
+    public const string VERSION = "0.3.0";
 
     /// <summary>全局日志（输出到 BepInEx/LogOutput.log）。</summary>
     internal static new ManualLogSource Log { get; private set; } = null!;
@@ -53,7 +53,7 @@ public class Plugin : BasePlugin
         {
             ClassInjector.RegisterTypeInIl2Cpp<ReconBehaviour>();
             AddComponent<ReconBehaviour>();
-            Log.LogInfo("[MitaTE] 侦察组件已启用：场景切换记录到 BepInEx/config/MitaTE-recon.log，游戏内按 F9 打印当前场景根对象");
+            Log.LogInfo("[MitaTE] 侦察组件已启用：场景切换自动记录+快照（同场景覆盖/异场景保留），文件在 BepInEx/config/MitaTE-recon.log 与 MitaTE-scene-snapshots.log，F9 可手动补抓");
         }
         catch (Exception e)
         {

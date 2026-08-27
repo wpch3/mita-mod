@@ -16,6 +16,10 @@ namespace MitaGodMode;
 ///   1. GodMode     —— 无敌：拦截一切对玩家的伤害/处决/判负判定（被抓到也不死）。
 ///   2. PacifyMitas —— 和平：拦截米塔/怪物的攻击发起（她不主动打你）。
 ///   3. SpeedMultiplier —— 移速倍率：挂在 WorldPlayer.speed 上，默认 1.6x，跑赢一切追杀。
+/// v1.1 新增：**F10 强制跳过当前追杀环节**（见 GodBehaviour.cs）——
+///   躲藏/追杀章开无敌被发现后会出现"收场动作被没收 → 剧本无法落幕 → 外部计时重置 →
+///   从入口无限轮回"的问题；F10 直接调用该环节的正牌落幕函数（如 PlayerExit），
+///   她收工、玩家走人，环节立即结束。
 ///
 /// 设计要点：
 ///   - 全部用字符串反射定位（AccessTools.TypeByName/Method），不硬引用 interop；
@@ -31,7 +35,7 @@ public class Plugin : BasePlugin
 {
     public const string GUID = "com.wpch3.miside.godmode";
     public const string NAME = "MiSide God Mode";
-    public const string VERSION = "1.0.0";
+    public const string VERSION = "1.1.0";
 
     /// <summary>全局日志（输出到 BepInEx/LogOutput.log）。</summary>
     internal static new ManualLogSource Log { get; private set; } = null!;
@@ -81,7 +85,8 @@ public class Plugin : BasePlugin
             "无敌：拦截一切对玩家的伤害/处决/判负判定（被抓到也不会死）。");
         _pacify = Config.Bind("God", "PacifyMitas", true,
             "和平：拦截米塔/怪物的攻击发起（她们不会主动打你）。\n" +
-            "万一某段剧情因怪物不动手而不推进，把本项改 false 只留 GodMode 即可。");
+            "⚠️ 躲藏/追杀章被看到后会因剧本无法落幕而轮回——那种章节请把本项关 false，" +
+            "或直接用 F10 强制跳过该环节（推荐）。");
         _speed = Config.Bind("God", "SpeedMultiplier", 1.6f,
             "移速倍率：挂在 WorldPlayer.speed 上（1 = 关闭；默认 1.6x，跑赢一切追杀）。");
 
@@ -96,6 +101,18 @@ public class Plugin : BasePlugin
 
         Log.LogInfo($"[GodMode] {NAME} v{VERSION} 已加载：{ok} 个补丁生效，{skip} 个目标跳过（不影响游戏）");
         Log.LogInfo($"[GodMode] 开关：GodMode={_godMode.Value} Pacify={_pacify.Value} Speed={_speed.Value}x");
+
+        // --- v1.1：F10 强制跳过追杀环节的热键组件 ---
+        try
+        {
+            Il2CppInterop.Runtime.Injection.ClassInjector.RegisterTypeInIl2Cpp<GodBehaviour>();
+            AddComponent<GodBehaviour>();
+            Log.LogInfo("[GodMode] 热键组件已启用：按 F10 强制结束当前追杀/躲藏环节（详见 docs/godmode.md）");
+        }
+        catch (Exception e)
+        {
+            Log.LogWarning($"[GodMode] 热键组件启动失败（无敌/和平/移速不受影响）: {e.Message}");
+        }
     }
 
     // ================== 补丁挂载 ==================

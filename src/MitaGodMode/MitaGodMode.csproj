@@ -4,10 +4,10 @@
     <TargetFramework>net6.0</TargetFramework>
     <AssemblyName>MitaGodMode</AssemblyName>
     <RootNamespace>MitaGodMode</RootNamespace>
-    <Version>1.0.0</Version>
+    <Version>1.1.0</Version>
     <LangVersion>latest</LangVersion>
     <Nullable>enable</Nullable>
-    <Description>MiSide 作弊模组「无敌与和平」（BepInEx 6 / IL2CPP）——不死 + 怪物不主动攻击 + 移速倍率</Description>
+    <Description>MiSide 作弊模组「无敌与和平」（BepInEx 6 / IL2CPP）——不死 + 怪物不主动攻击 + 移速倍率 + F10 强制跳过追杀环节</Description>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,8 +17,23 @@
     <PackageReference Include="HarmonyX" Version="2.*" PrivateAssets="all" />
   </ItemGroup>
 
-  <!-- 说明：本模组全部通过字符串反射定位游戏方法（AccessTools.TypeByName），
-       不直接引用 interop 的任何游戏类型 —— 因此不依赖 lib/interop，
-       游戏小更新后比强类型补丁更耐活；找不到的目标会自动跳过并写日志 -->
+  <!-- 可选：环境变量 MISIDE_DIR 指向游戏根目录时，直接引用游戏里的 interop -->
+  <PropertyGroup>
+    <MiSideDir Condition="'$(MiSideDir)' == '' AND '$(MISIDE_DIR)' != ''">$(MISIDE_DIR)</MiSideDir>
+    <LocalInteropDir>$(MSBuildProjectDirectory)\..\..\lib\interop</LocalInteropDir>
+  </PropertyGroup>
+
+  <!-- 补丁目标仍全部走字符串反射；但从 v1.1 起热键组件（GodBehaviour）需要
+       UnityEngine 包装类型（Input/FindObjectsOfType/SceneManager）→ 引用 interop -->
+  <ItemGroup Condition="Exists('$(LocalInteropDir)\Assembly-CSharp.dll')">
+    <Reference Include="$(LocalInteropDir)\*.dll">
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup Condition="'$(MiSideDir)' != '' AND Exists('$(MiSideDir)\BepInEx\interop\Assembly-CSharp.dll')">
+    <Reference Include="$(MiSideDir)\BepInEx\interop\*.dll">
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
 
 </Project>

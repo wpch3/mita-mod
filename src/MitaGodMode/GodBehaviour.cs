@@ -77,12 +77,32 @@ public class GodBehaviour : MonoBehaviour
                     continue;
                 }
 
+                // IL2CPP 关键差异②：FindObjectsOfType 返回的元素只是"基类包装"(UnityEngine.Object)，
+                // 不是 Location6_MitaKiller 的托管包装实例；MethodInfo.Invoke（声明在具体包装类上）
+                // 会报 "Object does not match target type"（2026-08-27 用户日志实证）。
+                // 解法：用其 IntPtr 构造目标类型的具体包装实例再调用。
+                int invoked = 0;
                 foreach (UnityEngine.Object inst in found)
-                    exit.Invoke(inst, null);
+                {
+                    try
+                    {
+                        object target = type.IsInstanceOfType(inst)
+                            ? inst
+                            : Activator.CreateInstance(type, inst.Pointer);
+                        exit.Invoke(target, null);
+                        invoked++;
+                    }
+                    catch (Exception e)
+                    {
+                        Plugin.Log.LogWarning($"[GodMode] F10 调用 {typeName}.{methodName} 某实例失败（继续其他实例）: {e.Message}");
+                    }
+                }
+
+                if (invoked == 0) continue;
 
                 handled = true;
                 Plugin.Log.LogInfo(
-                    $"[GodMode] F10 已强制结束环节：{typeName}.{methodName} × {found.Length} 个实例（场景 {scene}）");
+                    $"[GodMode] F10 已强制结束环节：{typeName}.{methodName} × {invoked} 个实例（场景 {scene}）");
             }
             catch (Exception e)
             {

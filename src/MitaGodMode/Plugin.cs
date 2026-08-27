@@ -35,7 +35,7 @@ public class Plugin : BasePlugin
 {
     public const string GUID = "com.wpch3.miside.godmode";
     public const string NAME = "MiSide God Mode";
-    public const string VERSION = "1.1.0";
+    public const string VERSION = "1.1.1";
 
     /// <summary>全局日志（输出到 BepInEx/LogOutput.log）。</summary>
     internal static new ManualLogSource Log { get; private set; } = null!;

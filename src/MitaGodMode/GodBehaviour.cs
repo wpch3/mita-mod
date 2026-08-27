@@ -58,7 +58,16 @@ public class GodBehaviour : MonoBehaviour
                 Type? type = AccessTools.TypeByName(typeName);
                 if (type == null) continue;
 
-                UnityEngine.Object[] found = UnityEngine.Object.FindObjectsOfType(type);
+                // IL2CPP 关键差异：interop 里 FindObjectsOfType 要的是 Il2CppSystem.Type，
+                // 托管 System.Type 必须经 Il2CppType.From 换乘（CS1503 的修正）
+                Il2CppSystem.Type? il2cppType = Il2CppInterop.Runtime.Il2CppType.From(type, false);
+                if (il2cppType == null)
+                {
+                    Plugin.Log.LogWarning($"[GodMode] F10：{typeName} 的 IL2CPP 类型解析失败，跳过");
+                    continue;
+                }
+
+                UnityEngine.Object[] found = UnityEngine.Object.FindObjectsOfType(il2cppType);
                 if (found == null || found.Length == 0) continue;
 
                 MethodInfo? exit = AccessTools.Method(type, methodName);
